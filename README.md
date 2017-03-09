@@ -11,7 +11,7 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 ## Installation
 **Warning:** If you want to use my dotfiles or part of them I reccomend you just copy what you need because sometimes I will brake some of the code. Furthermore you should always review and check the code you use. Do not blindly use my settings unless you know what you do. Use at your own risk and with caution!
 
-If you want to use the repo anyway that's how it works:
+If you want to use the repo anyway, that's how it works:
 
 To link the repo files to the correct location I have decided to use stow because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For Example in debian (you need to be root or use sudo):  
 
@@ -21,7 +21,7 @@ Now you can clone this repository **in your home directory**:
 
 `git clone https://github.com/flokoe/dotfiles.git`
 
-After the cloning is finisched you can install the files you want. For example you only want to install the configuration files for urxvt:
+After the cloning is finished you can install the files you want. For example you only want to install the configuration files for urxvt:
 ```
 cd ~/dotfiles/
 stow urxvt
