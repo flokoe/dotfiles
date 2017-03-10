@@ -6,7 +6,7 @@ If you have any tips, tricks or suggestions I would appreciate them.
 Now feel free to explore, learn and/or use it for your own dotfiles. Enjoy :)
 ## Features
 Every application has its own directory with its dotfiles/configuration. Do not hesitate to examine the files they are well documented.
-* Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource](urxvt/.Xresource)
+* Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
 
 ## Installation
 **Warning:** If you want to use my dotfiles or part of them I reccomend you just copy what you need because sometimes I will brake some of the code. Furthermore you should always review and check the code you use. Do not blindly use my settings unless you know what you do. Use at your own risk and with caution!
