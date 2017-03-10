@@ -1,0 +1,19 @@
+[global_config]
+  handle_size = 0
+  inactive_color_offset = 0.64
+[keybindings]
+[profiles]
+  [[default]]
+  [[flokoe]]
+    use_system_font = False
+    font = Bitstream Vera Sans Mono 11
+    scrollbar_position = hidden
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

@@ -22,6 +22,9 @@ urxvt.cursorBlink: true
 ! specifies which chars should work as a delimiter when double clicking selection
 urxvt.cutchars: ":"
 
+urxvt.secondaryScreen: true
+urxvt.secondaryScroll: false
+
 
 ! Base16 Gooey
 ! Scheme: Alex Booker <alexbooker@fastmail.im>
