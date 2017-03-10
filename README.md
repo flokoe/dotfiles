@@ -13,14 +13,18 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 
 If you want to use the repo anyway, that's how it works:
 
-To link the repo files to the correct location I have decided to use stow because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For Example in debian (you need to be root or use sudo):  
+To link the repo files to the correct location I have decided to use stow because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For Example in debian (you need to be root or use sudo):
 ```
 apt-get install stow
 ```
 Now you can clone this repository **in your home directory**:  
 ```
+cd ~
 git clone https://github.com/flokoe/dotfiles.git
 ```
+**Info:** It is possible to clone the repo to other locations, but to clone in your home directory is the easiest solution. For more information please consider the man page of stow.
+
+
 After the cloning is finished you can install the files you want. For example you only want to install the configuration files for urxvt:
 ```
 cd ~/dotfiles/
@@ -28,12 +32,19 @@ stow urxvt/
 ```
 Stow now creates symlinks in your home directory to the neccessary files in `~/dotfiles/urxvt`.
 ### Uninstallation
-If you dont want to use certain dotfiles/configuration anymore you can simply uninstall them with stow:
+If you don't want to use certain dotfiles/configuration anymore you can simply uninstall them with stow:
 ```
 cd ~/dotfiles/
 stow -D urxvt/
 ```
 The option `-D` is equivalent to `--delete` and removes every symlink from your home directory pointing in the specified directory.
+### Reinstallation
+If the repository gets updated and the files/directories change you can simply reinstall the changed files:
+```
+cd ~/dotfiles/
+stow -R urxvt/
+```
+The `-R` option automatically deletes all old symlinks and creates new ones so that all files have proper and working links.
 ## Deprecations
 At this moment there is nothing deprecated.
 ## Inspiration
