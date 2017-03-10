@@ -6,7 +6,7 @@ If you have any tips, tricks or suggestions I would appreciate them.
 Now feel free to explore, learn and/or use it for your own dotfiles. Enjoy :)
 ## Features
 Every application has its own directory with its dotfiles/configuration. Do not hesitate to examine the files they are well documented.
-* Configuration for the terminal-emulator terminator: [terminator/.config/terminator](terminator/.config/terminator)
+* Configuration for the terminal-emulator terminator: [terminator/.config/terminator/config](terminator/.config/terminator/config)
 * Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
 
 ## Installation
