@@ -6,6 +6,7 @@ If you have any tips, tricks or suggestions I would appreciate them.
 Now feel free to explore, learn and/or use it for your own dotfiles. Enjoy :)
 ## Features
 Every application has its own directory with its dotfiles/configuration. Do not hesitate to examine the files they are well documented.
+* Configuration for the terminal-emulator terminator: [terminator/.config/terminator](terminator/.config/terminator)
 * Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
 
 ## Installation
@@ -13,7 +14,7 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 
 If you want to use the repo anyway, that's how it works:
 
-To link the repo files to the correct location I have decided to use stow because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For Example in debian (you need to be root or use sudo):
+To link the repo files to the correct location I have decided to use [GNU Stow](https://www.gnu.org/software/stow/) because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For Example in debian (you need to be root or use sudo):
 ```
 apt-get install stow
 ```
