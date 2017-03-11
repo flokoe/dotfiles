@@ -22,10 +22,19 @@ urxvt.cursorBlink: true
 ! specifies which chars should work as a delimiter when double clicking selection
 urxvt.cutchars: ":"
 
-urxvt.secondaryScreen: true
+! own scrollback buffer for secondary screens like for example less
 urxvt.secondaryScroll: false
 
+urxvt.depth: 32
 
+! activates all listed plugins
+urxvt.perl-ext-common: vtwheel,resize-font
+
+! keybindings for resize-font
+urxvt.keysym.C-0:	resize-font:reset
+
+
+! Color Scheme
 ! Base16 Gooey
 ! Scheme: Alex Booker <alexbooker@fastmail.im>
 
