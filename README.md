@@ -14,11 +14,11 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 
 If you want to use the repo anyway, that's how it works:
 
-To link the repo files to the correct location I have decided to use [GNU Stow](https://www.gnu.org/software/stow/) because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For Example in debian (you need to be root or use sudo):
+To link the repo files to the correct location I have decided to use [GNU Stow](https://www.gnu.org/software/stow/) because it is easy to use and install and has no big dependencies. So first you have to install stow. This is easily done with the package manager of your distro. For example in debian (you need to be root or use sudo):
 ```
 apt-get install stow
 ```
-Now you can clone this repository **in your home directory**:  
+Now you can clone this repository as your normal user **in your home directory**:  
 ```
 cd ~
 git clone https://github.com/flokoe/dotfiles.git
