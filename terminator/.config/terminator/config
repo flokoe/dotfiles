@@ -1,18 +1,31 @@
 [global_config]
+  always_split_with_profile = True
+  title_transmit_bg_color = "#ee829f"
   handle_size = 0
   inactive_color_offset = 0.64
+  title_inactive_bg_color = "#7780a1"
 [keybindings]
 [profiles]
   [[default]]
+    background_image = None
   [[flokoe]]
-    use_system_font = False
-    font = Bitstream Vera Sans Mono 11
     scrollbar_position = hidden
+    word_chars = "-A-Za-z0-9,./?%&#_"
+    palette = "#101218:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#d1d4e0:#7780a1:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#ffffff"
+    background_image = None
+    background_darkness = 0.86
+    background_type = transparent
+    use_system_font = False
+    cursor_color = "#d1d4e0"
+    foreground_color = "#d1d4e0"
+    font = Bitstream Vera Sans Mono 11
+    background_color = "#101218"
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = flokoe
     [[[window0]]]
       type = Window
       parent = ""
