@@ -29,7 +29,10 @@ set wildmenu
 set hlsearch
 
 " specifies which color scheme should be used
-colorscheme desert
+colorscheme gruvbox
+
+" make tabs four spaces big
+set tabstop=4 shiftwidth=4 smarttab
 
 
 """"""""""""""""""""""
@@ -37,3 +40,15 @@ colorscheme desert
 """"""""""""""""""""""
 
 set laststatus=2
+
+" set colorscheme for lightline
+let g:lightline = {
+	\ 'colorscheme': 'gruvbox',
+	\ }
+
+
+""""""""""""""""""""""
+" GRUVBOX SETTINGS
+""""""""""""""""""""""
+
+set background=dark

@@ -16,5 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Install lightline
 Plugin 'itchyny/lightline.vim'
 
+" Install gruvbox colorscheme
+Plugin 'morhetz/gruvbox'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
