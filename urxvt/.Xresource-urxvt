@@ -10,8 +10,8 @@ urxvt.geometry: 119x36
 urxvt.fading: 60
 
 ! fonts
-urxvt.font: xft:Bitstream Vera Sans Mono:Roman:size=11
-urxvt.boldFont: xft:Bitstream Vera Sans Mono:Bold:size=11
+urxvt.font: xft:DejaVu Sans Mono:Book:size=11
+urxvt.boldFont: xft:DejaVu Sans Mono:Bold:size=11
 
 ! disables old and ugly scrollbar
 urxvt.scrollBar: false
