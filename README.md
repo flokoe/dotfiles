@@ -10,7 +10,7 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 * Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
 
 ## Installation
-**Warning:** If you want to use my dotfiles or part of them I reccomend you just copy what you need because sometimes I will brake some of the code. Furthermore you should always review and check the code you use. Do not blindly use my settings unless you know what you do. Use at your own risk and with caution!
+**Warning:** If you want to use my dotfiles or part of them I reccomend you just copy what you need because sometimes I will break some of the code. Furthermore you should always review and check the code you use. Do not blindly use my settings unless you know what you do. Use at your own risk and with caution!
 
 If you want to use the repo anyway, that's how it works:
 
@@ -49,9 +49,9 @@ The `-R` option automatically deletes all old symlinks and creates new ones so t
 ## Deprecations
 At this moment there is nothing deprecated.
 ## Inspiration
-andschwa's dotfiles https://github.com/andschwa/dotfiles
-xero's dotfiles https://github.com/xero/dotfiles
-ashishb's dotfiles https://github.com/ashishb/dotfiles/
+andschwa's dotfiles https://github.com/andschwa/dotfiles  
+xero's dotfiles https://github.com/xero/dotfiles  
+ashishb's dotfiles https://github.com/ashishb/dotfiles/  
 square's dotfiles https://github.com/square/maximum-awesome
 ## License
 Copyright (c) 2017 "flokoe" Florian Köhler  
