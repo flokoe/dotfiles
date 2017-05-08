@@ -49,7 +49,10 @@ The `-R` option automatically deletes all old symlinks and creates new ones so t
 ## Deprecations
 At this moment there is nothing deprecated.
 ## Inspiration
-No inspiration yet.
+andschwa's dotfiles https://github.com/andschwa/dotfiles
+xero's dotfiles https://github.com/xero/dotfiles
+ashishb's dotfiles https://github.com/ashishb/dotfiles/
+square's dotfiles https://github.com/square/maximum-awesome
 ## License
 Copyright (c) 2017 "flokoe" Florian Köhler  
 The code is available under the [MIT license](LICENSE).
