@@ -1,32 +1,55 @@
 [global_config]
-  always_split_with_profile = True
-  title_transmit_bg_color = "#ee829f"
   handle_size = 0
-  inactive_color_offset = 0.64
+  title_transmit_bg_color = "#ee829f"
   title_inactive_bg_color = "#7780a1"
+  inactive_color_offset = 0.64
+  always_split_with_profile = True
 [keybindings]
+  cycle_next = Unbound
+  cycle_prev = Unbound
+  go_next = Unbound
+  go_prev = Unbound
+  go_up = Unbound
+  go_down = Unbound
+  go_left = Unbound
+  go_right = Unbound
+  split_horiz = <Ctrl>h
+  split_vert = <Ctrl>v
+  next_tab = <Ctrl>Tab
+  prev_tab = <Ctrl><Shift>Tab
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
 [profiles]
   [[default]]
     background_image = None
   [[flokoe]]
-    scrollbar_position = hidden
-    word_chars = "-A-Za-z0-9,./?%&#_"
-    palette = "#101218:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#d1d4e0:#7780a1:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#ffffff"
-    background_image = None
-    background_darkness = 0.86
-    background_type = transparent
-    use_system_font = False
-    cursor_color = "#d1d4e0"
-    foreground_color = "#d1d4e0"
-    font = Bitstream Vera Sans Mono 11
     background_color = "#101218"
+    background_darkness = 0.82
+    background_type = transparent
+    background_image = None
+    cursor_color = "#d1d4e0"
+    use_system_font = False
+    font = Bitstream Vera Sans Mono 11
+    foreground_color = "#d1d4e0"
+    scrollbar_position = hidden
+    scrollback_lines = 5000
+    palette = "#101218:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#d1d4e0:#7780a1:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#ffffff"
+    word_chars = "-A-Za-z0-9,./?%&#_"
 [layouts]
   [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1200, 800
     [[[child1]]]
       type = Terminal
       parent = window0
       profile = flokoe
-    [[[window0]]]
-      type = Window
-      parent = ""
 [plugins]
