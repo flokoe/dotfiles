@@ -14,7 +14,7 @@
   go_left = Unbound
   go_right = Unbound
   split_horiz = <Ctrl>h
-  split_vert = <Ctrl>v
+  split_vert = <Ctrl><Alt>v
   next_tab = <Ctrl>Tab
   prev_tab = <Ctrl><Shift>Tab
   switch_to_tab_1 = <Alt>1
