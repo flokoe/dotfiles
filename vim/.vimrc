@@ -42,9 +42,9 @@ set tabstop=4 shiftwidth=4 smarttab
 set laststatus=2
 
 " set colorscheme for lightline
-"let g:lightline = {
-"	\ 'colorscheme': 'gruvbox',
-"	\ }
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ }
 
 
 """"""""""""""""""""""
