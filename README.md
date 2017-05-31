@@ -47,7 +47,7 @@ stow -R urxvt/
 ```
 The `-R` option automatically deletes all old symlinks and creates new ones so that all files have proper and working links.
 ## Deprecations
-At this moment there is nothing deprecated.
+The configs for urxvt are no longer under active development because I don't use them anymore.
 ## Inspiration
 andschwa's dotfiles https://github.com/andschwa/dotfiles  
 xero's dotfiles https://github.com/xero/dotfiles  
