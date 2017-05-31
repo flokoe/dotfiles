@@ -8,6 +8,7 @@ Now feel free to explore, learn and/or use it for your own dotfiles. Enjoy :)
 Every application has its own directory with its dotfiles/configuration. Do not hesitate to examine the files they are well documented.
 * Configuration for the terminal-emulator terminator: [terminator/.config/terminator/config](terminator/.config/terminator/config)
 * Configs for the text editor vim: [vim/](vim/)
+* My bash environment: [bash/](bash/)
 * Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
 
 ## Installation
