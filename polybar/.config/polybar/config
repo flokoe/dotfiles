@@ -1,0 +1,7 @@
+; This is the polybar config of Florian Koehler
+; https://github.com/flokoe/dotfiles
+
+[bar/flokoeBar]
+; Put the bar at the bottom of the screen
+bottom = false
+
