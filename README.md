@@ -10,6 +10,7 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 * Configs for the text editor vim: [vim/](vim/)
 * My bash environment: [bash/](bash/)
 * My config for i3 window manager: [i3/.config/i3/config](i3/.config/i3/config)
+* My Polybar config files: [polybar/.config/polybar/](polybar/.config/polybar/)
 * Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
 
 ## Installation
