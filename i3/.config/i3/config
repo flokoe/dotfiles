@@ -141,5 +141,8 @@ bar {
 
 # Application auto start on system start-up
 
+# Start compton
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf
+
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh
