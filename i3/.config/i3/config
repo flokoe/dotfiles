@@ -138,3 +138,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Application auto start on system start-up
+
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh
