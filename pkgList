@@ -21,4 +21,6 @@ pavucontrol
 dbus-x11
 sudo
 ttf-bitstream-vera
+curl
+screen
 
