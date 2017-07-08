@@ -23,7 +23,8 @@ foreground = #eee
 radius = 0
 
 ; Under-/overline pixel size
-line-size = 0
+underline-size = 2
+underline-color = #eee
 
 ; Space between elements (deprecated)
 spacing = 1
@@ -39,10 +40,10 @@ font-0 = NotoSans-Regular:size=13:0
 font-1 = FontAwesome:size=12:-2
 
 ; Defines the position of the modules
-modules-left = i3
-modules-right = date
+modules-left = i3 xwindow
+modules-right = battery date powermenu
 
-; Set locale (important fro e.g. date and time)
+; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
 
 ; MODULES
@@ -76,3 +77,63 @@ label = %date% %time%
 
 ; Defines Icon before date and time
 format =    <label>
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:120:...%
+label-padding = 4
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = AC0
+
+poll-interval = 5
+
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity>  <label-discharging>
+format-full = <ramp-capacity>  <label-full>
+label-charging = %percentage%
+label-discharging = %percentage%
+label-full = %percentage%
+format-charging-padding = 3
+format-discharging-padding = 3
+format-full-padding = 3
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+label-close = cancel
+label-open-padding = 4 
+label-close-padding = 3 
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-0-padding = 3
+menu-0-1-padding = 3
+
+menu-1-0 = reboot?  
+menu-1-0-exec = sudo reboot
+menu-1-0-padding = 3
+
+menu-2-0 = power off?  
+menu-2-0-exec = sudo poweroff
+menu-2-0-padding = 3
