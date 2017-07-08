@@ -1,8 +1,12 @@
 ; This is the polybar config of Florian Koehler
 ; https://github.com/flokoe/dotfiles
 
+
+; BAR
+
 [bar/flokoeBar]
 ; Put the bar at the bottom of the screen
+; if false bar is placed at the top
 bottom = false
 
 ; Dimensions defined as pixel value or pecentage
@@ -46,6 +50,7 @@ modules-right = battery date powermenu
 ; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
 
+
 ; MODULES
 
 [module/i3]
@@ -59,24 +64,6 @@ pin-workspace = true
 
 ; Wrap around when reaching the first/last workspace
 wrapping-scroll = true
-
-[module/date]
-type = internal/date
-
-; Seconds to sleep between updates
-interval = 1
-
-; Defines date string
-date = %A %d. %b
-
-; Defines time format
-time = %H:%M
-
-; Defines order
-label = %date% %time%
-
-; Defines Icon before date and time
-format =    <label>
 
 [module/xwindow]
 type = internal/xwindow
@@ -115,6 +102,24 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1
+
+; Defines date string
+date = %A %d. %b
+
+; Defines time format
+time = %H:%M
+
+; Defines order
+label = %date% %time%
+
+; Defines Icon before date and time
+format =    <label>
 
 [module/powermenu]
 type = custom/menu
