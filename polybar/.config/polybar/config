@@ -5,3 +5,74 @@
 ; Put the bar at the bottom of the screen
 bottom = false
 
+; Dimensions defined as pixel value or pecentage
+width = 100%
+height = 32
+
+; Offset defined as pixel value
+offset-x = 0
+offset-y = 0
+
+; Background argb color
+background = #5a000000
+
+; Foreground argb color
+foreground = #eee
+
+# Value used to draw round coreners
+radius = 0
+
+; Under-/overline pixel size
+line-size = 0
+
+; Space between elements (deprecated)
+spacing = 1
+
+; Space at the beginning/end of the bar
+padding = 0
+
+; Space before/after each module
+module-margin = 0
+
+; Fonts
+font-0 = NotoSans-Regular:size=13:0
+font-1 = FontAwesome:size=12:-2
+
+; Defines the position of the modules
+modules-left = i3
+modules-right = date
+
+; Set locale (important fro e.g. date and time)
+locale = de_DE.UTF-8
+
+; MODULES
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+pin-workspace = true
+
+; Wrap around when reaching the first/last workspace
+wrapping-scroll = true
+
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1
+
+; Defines date string
+date = %A %d. %b
+
+; Defines time format
+time = %H:%M
+
+; Defines order
+label = %date% %time%
+
+; Defines Icon before date and time
+format =    <label>
