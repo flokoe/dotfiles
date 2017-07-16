@@ -196,8 +196,8 @@ bindsym $mod+r mode "resize"
 ##############
 
 # Create variables for colors
-set $bg-color 				#64434e
-set $inactive-bg-color 		#31081a
+set $bg-color 				#550e36
+set $inactive-bg-color 		#2d2d2d
 set $text-color				#ffffff
 set $inactive-text-color	#676e70
 set $urgent-bg-color 		#824052
