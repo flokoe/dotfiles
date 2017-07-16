@@ -10,6 +10,9 @@
 # Set the modifier key to windows key
 set $mod Mod4
 
+# Set background wallpaper
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/bg_wallpapers/dark-orange-nebula.jpg
+
 
 ########
 # FONTS
