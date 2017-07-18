@@ -14,7 +14,7 @@ set $mod Mod4
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/bg_wallpapers/dark-orange-nebula.jpg
 
 # Set the right order of my three monitors
-exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
+#exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
 
 
 ########
@@ -155,6 +155,12 @@ assign [class="Thunderbird"] $workspace1
 assign [class="Chromium"] $workspace3
 assign [class="Rambox"] $workspace4
 
+# Put certain workspaces on particluac monitors (in my case three)
+workspace $workspace1 output DP2-3
+workspace $workspace2 output DP2-2
+workspace $workspace3 output DP2-2
+workspace $workspace4 output eDP1
+
 
 ########
 # MODES
@@ -219,7 +225,7 @@ bar {
 ############################################
 
 # Start compton
-exec_always --no-startup-id compton --config $HOME/.config/compton.conf
+#exec_always --no-startup-id compton --config $HOME/.config/compton.conf
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh
