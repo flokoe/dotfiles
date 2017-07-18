@@ -5,6 +5,12 @@
 ; BAR
 
 [bar/flokoeBar]
+; Specifies on which monitor the bar should be placed
+monitor = DP2-2
+
+; Fallback option if the monitor mentioned above is not connected
+monitor-fallback = eDP1
+
 ; Put the bar at the bottom of the screen
 ; if false bar is placed at the top
 bottom = false
