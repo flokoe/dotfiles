@@ -62,12 +62,38 @@ locale = de_DE.UTF-8
 [module/i3]
 type = internal/i3
 
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-pin-workspace = true
+; Sorts workspaces by index
+index-sort = true
 
+; Assign icons to the different workspaces; defines default icon for
+; all further workspaces
+ws-icon-0 = 1:social;
+ws-icon-1 = 2:terms;
+ws-icon-2 = 3:browser;
+ws-icon-3 = 4:slack;
+ws-icon-default = 
+
+; Describes the style of the "mode" section
+label-mode-padding = 2
+label-mode-background = #00ff00
+
+; Shows only the icon and defines style of focused workspace
+label-focused = %icon%
+label-focused-underline = #ffffff
+label-focused-padding = 3
+
+; Shows only the icon and defines style of unfocused workspace
+label-unfocused = %icon%
+label-unfocused-padding = 3
+
+; Shows only the icon and defines style of visible workspace
+label-visible = %icon%
+label-visible-padding = 3
+
+; Shows only the icon and defines style of urgent workspace
+label-urgent = %icon%
+label-urgent-foreground = #00ff00
+label-urgent-padding = 3
 
 [module/xwindow]
 type = internal/xwindow
