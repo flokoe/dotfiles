@@ -97,8 +97,12 @@ label-urgent-padding = 3
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:120:...%
-label-padding = 4
+
+; Space on left and right side
+format-padding = 1
+
+; Maximla lenght of characters that are shown
+label-maxlen = 100
 
 [module/cpu]
 type = internal/cpu
