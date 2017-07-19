@@ -117,10 +117,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20  # decrease screen brightn
 #############
 
 # Create variables for the names of the workspaces
-set $workspace1 ""
-set $workspace2 ""
-set $workspace3 ""
-set $workspace4 ""
+set $workspace1 "1:social"
+set $workspace2 "2:terms"
+set $workspace3 "3:browser"
+set $workspace4 "4:slack"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
