@@ -29,7 +29,7 @@ background = #5a000000
 ; Foreground argb color
 foreground = #eee
 
-# Value used to draw round coreners
+; Value used to draw round coreners
 radius = 0
 
 ; Under-/overline pixel size
@@ -51,7 +51,7 @@ font-1 = FontAwesome:size=12:-2
 
 ; Defines the position of the modules
 modules-left = i3 xwindow
-modules-right = battery date powermenu
+modules-right = backlight battery date powermenu
 
 ; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
@@ -109,6 +109,15 @@ type = internal/cpu
 
 ; Seconds to sleep between updates
 interval = 2
+
+[module/backlight]
+type = internal/xbacklight
+
+; Define what monitor should be used
+output = eDP1
+
+; Define style how backlight level should be displayed
+label =  %percentage%%
 
 [module/battery]
 type = internal/battery
