@@ -56,6 +56,32 @@ modules-right = backlight cpu battery date powermenu
 ; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
 
+[bar/sysTrayBar]
+inherit = bar/flokoeBar
+
+; Specifies on which monitor the bar should be placed
+monitor = eDP1
+
+; Overwrite fallback because the specified monitor is the internal monitor
+monitor-fallback =
+
+; Overwrite the position of the bar, so that is is placed at the bottom
+bottom = true
+
+; Overwrites the height of the bar
+height = 24
+
+; Disables underline
+underline-size = 0
+
+; Disables all modules except the placeholderText module
+; because without any module the bar will not be shown
+modules-left = 
+modules-right = placeholderText
+
+; Position of the tray area
+tray-position = right
+
 
 ; MODULES
 
@@ -193,3 +219,9 @@ menu-1-0-padding = 3
 menu-2-0 = power off?  
 menu-2-0-exec = /sbin/shutdown now
 menu-2-0-padding = 3
+
+[module/placeholderText]
+type = custom/text
+
+; Defines one space as content, so that no content is seen
+content = " "
