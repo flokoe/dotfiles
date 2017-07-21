@@ -51,7 +51,7 @@ font-1 = FontAwesome:size=12:-2
 
 ; Defines the position of the modules
 modules-left = i3 xwindow
-modules-right = backlight volume memory cpu battery date powermenu
+modules-right = backlight volume memory cpu wired-nw wifi-nw battery date powermenu
 
 ; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
@@ -173,6 +173,35 @@ label =  %percentage%
 
 ; Seconds to sleep between updates
 interval = 5
+
+[module/wired-nw]
+type = internal/network
+
+; What interface should the module use
+interface = enp0s31f6
+
+; Time between updates
+interval = 5
+
+; What should be displayed if wired is connected
+label-connected = 
+
+; What should be displayed if wired is disconnected (just make the color darker)
+label-disconnected = 
+label-disconnected-foreground = #808080
+
+[module/wifi-nw]
+type = internal/network
+
+: Inherits interval and disconnected foreground color
+inherit = module/wired-nw
+
+; Interface that should be used for wifi
+interface = wlp58s0
+
+; What should be displayed if wifi is connceted/disconnected
+label-connected = 
+label-disconnected = 
 
 [module/battery]
 type = internal/battery
