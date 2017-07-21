@@ -51,7 +51,7 @@ font-1 = FontAwesome:size=12:-2
 
 ; Defines the position of the modules
 modules-left = i3 xwindow
-modules-right = backlight volume cpu battery date powermenu
+modules-right = backlight volume memory cpu battery date powermenu
 
 ; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
@@ -150,6 +150,7 @@ headphone-soundcard = default
 ; Name of the master mixer
 master-mixer = Master
 
+label-volume = %percentage%
 label-muted =  --
 
 ramp-volume-0 = 
@@ -157,6 +158,13 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 format-volume = <ramp-volume> <label-volume>
+
+[module/memory]
+type = internal/memory
+
+interval = 5
+
+label =  %percentage_used%
 
 [module/cpu]
 type = internal/cpu
