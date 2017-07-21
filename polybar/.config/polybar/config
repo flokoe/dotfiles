@@ -51,7 +51,7 @@ font-1 = FontAwesome:size=12:-2
 
 ; Defines the position of the modules
 modules-left = i3 xwindow
-modules-right = backlight cpu battery date powermenu
+modules-right = backlight volume cpu battery date powermenu
 
 ; Set locale (important for e.g. date and time)
 locale = de_DE.UTF-8
@@ -130,14 +130,6 @@ format-padding = 1
 ; Maximla lenght of characters that are shown
 label-maxlen = 100
 
-[module/cpu]
-type = internal/cpu
-
-label =  %percentage%%
-
-; Seconds to sleep between updates
-interval = 5
-
 [module/backlight]
 type = internal/xbacklight
 
@@ -145,7 +137,34 @@ type = internal/xbacklight
 output = eDP1
 
 ; Define style how backlight level should be displayed
-label =  %percentage%%
+label =  %percentage%
+
+[module/volume]
+type = internal/volume
+
+; Soundcard to be used
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+; Name of the master mixer
+master-mixer = Master
+
+label-muted =  --
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+format-volume = <ramp-volume> <label-volume>
+
+[module/cpu]
+type = internal/cpu
+
+label =  %percentage%
+
+; Seconds to sleep between updates
+interval = 5
 
 [module/battery]
 type = internal/battery
