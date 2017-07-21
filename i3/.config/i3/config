@@ -13,6 +13,9 @@ set $mod Mod4
 # Set background wallpaper
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/bg_wallpapers/dark-orange-nebula.jpg
 
+# Set border
+new_window pixel 1
+
 
 ########
 # FONTS
@@ -250,10 +253,10 @@ client.urgent			$urgent-bg-color	$bg-color			$text-color				$indicator-color
 ############################################
 
 # Start compton
-#exec_always --no-startup-id compton --config $HOME/.config/compton.conf
+exec_always --no-startup-id compton
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh
 
 # Start greenclip daemon for clipboard management with rofi
-exec_always --no-startup-id $HOME/.config/i3/launch-greenclip.sh
+exec --no-startup-id $HOME/.config/i3/launch-greenclip.sh
