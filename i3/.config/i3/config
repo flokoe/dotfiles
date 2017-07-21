@@ -36,6 +36,10 @@ bindsym $mod+Shift+q kill
 # Start rofi application launcher
 bindsym $mod+d exec rofi -show run
 
+# Start greenclip clipboard manager
+set $greenclipBin "$HOME/bin/greenclip"
+bindsym Control+Mod1+h exec rofi -modi "clipboard:$greenclipBin print" -show clipboard
+
 # Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -168,26 +172,26 @@ workspace_auto_back_and_forth yes
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym odiaeresis resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym j resize shrink width 10 px or 10 ppt
+	bindsym k resize grow height 10 px or 10 ppt
+	bindsym l resize shrink height 10 px or 10 ppt
+	bindsym odiaeresis resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -195,27 +199,27 @@ bindsym $mod+r mode "resize"
 # MONITOR MODE
 # extra mode to switch with xrandr between monitor setups
 mode "monitors" {
-		# These bindings only work in monitor mode
+	# These bindings only work in monitor mode
 
-		# Switch to single monitor mode (notebook only)
-		bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+	# Switch to single monitor mode (notebook only)
+	bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
 
-		# Switch to multimonitor setup at work (two external monitors and internal notebook)
-		bindsym w exec --no-startup-id xrandr --output VIRTUAL1 --off \
-		--output eDP1 --primary --mode 1920x1080 --pos 3840x0 --rotate normal --output DP1 --off \
-		--output DP2-1 --off --output DP2-2 --mode 1920x1200 --pos 1920x0 --rotate normal \
-		--output DP2-3 --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off \
-		--output HDMI1 --off --output DP2 --off
+	# Switch to multimonitor setup at work (two external monitors and internal notebook)
+	bindsym w exec --no-startup-id xrandr --output VIRTUAL1 --off \
+	--output eDP1 --primary --mode 1920x1080 --pos 3840x0 --rotate normal --output DP1 --off \
+	--output DP2-1 --off --output DP2-2 --mode 1920x1200 --pos 1920x0 --rotate normal \
+	--output DP2-3 --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off \
+	--output HDMI1 --off --output DP2 --off
 
-		# Switch to presentation mode: mirror
-		#
+	# Switch to presentation mode: mirror
+	#
 
-		# Switch to presentation mode: dual monitors
-		#
+	# Switch to presentation mode: dual monitors
+	#
 
-		# Back to normal: Enter or Escape
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+	# Back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+m mode "monitors"
@@ -250,3 +254,6 @@ client.urgent			$urgent-bg-color	$bg-color			$text-color				$indicator-color
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh
+
+# Start greenclip daemon for clipboard management with rofi
+exec_always --no-startup-id $HOME/.config/i3/launch-greenclip.sh
