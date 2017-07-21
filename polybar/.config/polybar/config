@@ -17,7 +17,7 @@ bottom = false
 
 ; Dimensions defined as pixel value or pecentage
 width = 100%
-height = 32
+height = 31
 
 ; Offset defined as pixel value
 offset-x = 0
@@ -33,11 +33,8 @@ foreground = #eee
 radius = 0
 
 ; Under-/overline pixel size
-underline-size = 2
-underline-color = #eee
-
-; Space between elements (deprecated)
-spacing = 1
+line-size = 2
+line-color = #eee
 
 ; Space at the beginning/end of the bar
 padding = 0
@@ -137,7 +134,9 @@ type = internal/xbacklight
 output = eDP1
 
 ; Define style how backlight level should be displayed
-label =  %percentage%
+label =   %percentage%
+
+format-backlight-padding = 3
 
 [module/volume]
 type = internal/volume
@@ -157,19 +156,24 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume>  <label-volume>
+
+format-volume-padding = 3
+format-muted-padding = 3
 
 [module/memory]
 type = internal/memory
 
 interval = 5
 
-label =  %percentage_used%
+label =   %percentage_used%
 
 [module/cpu]
 type = internal/cpu
 
-label =  %percentage%
+label =   %percentage%
+
+format-padding = 3
 
 ; Seconds to sleep between updates
 interval = 5
