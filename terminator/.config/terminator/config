@@ -1,4 +1,5 @@
 [global_config]
+  focus = sloppy
   handle_size = 0
   title_transmit_bg_color = "#ee829f"
   title_inactive_bg_color = "#7780a1"
