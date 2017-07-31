@@ -187,10 +187,10 @@ mode "resize" {
 	bindsym odiaeresis resize grow width 10 px or 10 ppt
 
 	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Down resize grow height 5 px or 5 ppt
+	bindsym Up resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -253,7 +253,7 @@ client.urgent			$urgent-bg-color	$bg-color			$text-color				$indicator-color
 ############################################
 
 # Start compton
-exec_always --no-startup-id compton
+exec --no-startup-id compton
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh
