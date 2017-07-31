@@ -26,6 +26,16 @@ new_window pixel 1
 font pango:Noto Sans Regular 10
 
 
+####################
+# APPLICATION RULES
+####################
+
+# Automatically places all VBox windows on ws 10
+# and puts them in floating mode
+for_window [class="VirtualBox"] floating enable
+assign [class="VirtualBox"] 10
+
+
 ###############
 # KEY BINDINGS
 ###############
