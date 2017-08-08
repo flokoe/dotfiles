@@ -60,7 +60,7 @@ inherit = bar/flokoeBar
 monitor = eDP1
 
 ; Overwrite fallback because the specified monitor is the internal monitor
-monitor-fallback =
+monitor-fallback = DP2-3
 
 ; Overwrite the position of the bar, so that is is placed at the bottom
 bottom = true
