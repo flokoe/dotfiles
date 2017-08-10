@@ -128,6 +128,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5  # decrease screen brightne
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
+# locks the screen
+bindsym $mod+mod1+l exec $HOME/.config/i3/lock.sh
+
 
 #############
 # WORKSPACES
