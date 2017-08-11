@@ -47,7 +47,7 @@ font-0 = NotoSans-Regular:size=13:0
 font-1 = FontAwesome:size=12:-2
 
 ; Defines the position of the modules
-modules-left = i3 xwindow
+modules-left = i3
 modules-right = backlight volume memory cpu wired-nw wifi-nw battery date powermenu
 
 ; Set locale (important for e.g. date and time)
@@ -117,15 +117,6 @@ label-visible-padding = 3
 label-urgent = %icon%
 label-urgent-foreground = #00ff00
 label-urgent-padding = 3
-
-[module/xwindow]
-type = internal/xwindow
-
-; Space on left and right side
-format-padding = 1
-
-; Maximla lenght of characters that are shown
-label-maxlen = 100
 
 [module/backlight]
 type = internal/xbacklight
