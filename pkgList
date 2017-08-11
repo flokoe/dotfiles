@@ -23,4 +23,5 @@ sudo
 ttf-bitstream-vera
 curl
 screen
-
+xbacklight
+feh
