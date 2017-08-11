@@ -13,7 +13,7 @@ Every application has its own directory with its dotfiles/configuration. Do not 
 * Config file for compton: [compton/.config/compton.conf](compton/.config/compton.conf)
 * My Polybar config files: [polybar/.config/polybar/](polybar/.config/polybar/)
 * Custom configureation for the terminal-emulator urxvt: [urxvt/.Xresource-urxvt](urxvt/.Xresource-urxvt)
-* System specific conf files (More details in the [SYSTEM_INFO.md](system/SYSTEM_INFO.md)) e.g. systemd suspend configs: [system/](system/)
+* System specific conf files e.g. systemd suspend configs (More details in the [README.md](system/README.md)) in [system/](system/)
 
 ## Installation
 **Warning:** If you want to use my dotfiles or part of them I reccomend you just copy what you need because sometimes I will break some of the code. Furthermore you should always review and check the code you use. Do not blindly use my settings unless you know what you do. Use at your own risk and with caution!
