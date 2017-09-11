@@ -32,7 +32,7 @@ set hlsearch
 "colorscheme gruvbox
 
 " make tabs four spaces big
-set tabstop=4 shiftwidth=4 smarttab
+set tabstop=2 shiftwidth=2 expandtab smarttab
 
 " Add syntax highlighting to files without proper filetype extension
 au BufRead,BufNewFile *.js.dist set filetype=javascript
