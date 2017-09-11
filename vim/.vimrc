@@ -34,6 +34,9 @@ set hlsearch
 " make tabs four spaces big
 set tabstop=4 shiftwidth=4 smarttab
 
+" Add syntax highlighting to files without proper filetype extension
+au BufRead,BufNewFile *.js.dist set filetype=javascript
+
 
 """"""""""""""""""""""
 " LIGHTLINE SETTINGS
