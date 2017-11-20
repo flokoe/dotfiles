@@ -19,6 +19,9 @@ Plugin 'itchyny/lightline.vim'
 " Install gruvbox color scheme
 Plugin 'morhetz/gruvbox'
 
+" Install editorconfig plugin
+Plugin 'editorconfig/editorconfig-vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
