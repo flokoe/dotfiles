@@ -1,0 +1,20 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! Copyright: Florian KERUZORE (https://github.com/fkrz/dotfiles)
+! ------------------------------------------------------------------------------
+rofi.font: Noto Sans 15
+rofi.color-enabled: true
+rofi.color-window: argb:B322242D, argb:B322242D, argb:90ffffff
+rofi.color-normal: argb:00273238, argb:90c1c1c1, argb:00273238, argb:00394249, argb:ffffffff
+rofi.color-active: argb:00273238, argb:9080cbc4, argb:00273238, argb:00394249, argb:ff80cbc4
+rofi.color-urgent: argb:00273238, argb:90ff1844, argb:00273238, argb:00394249, argb:ffff1844
+rofi.separator-style: none
+rofi.separator-color: argb:00000000
+rofi.fullscreen: true
+rofi.padding:           200
+rofi.hide-scrollbar:    true
+rofi.line-margin:       4
+rofi.yoffset:           0
+rofi.xoffset:           0
+rofi.width:             100
+rofi.lines:             25
