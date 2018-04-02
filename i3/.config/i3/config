@@ -47,7 +47,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Start rofi application launcher
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -config $HOME/.config/rofi/drun_conf
 
 # Start greenclip clipboard manager
 set $greenclipBin "$HOME/bin/greenclip"
@@ -170,7 +170,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 assign [class="Pidgin"] $workspace1
 assign [class="Thunderbird"] $workspace1
 assign [class="Chromium"] $workspace3
-assign [class="Rambox"] $workspace4
+assign [class="Franz"] $workspace4
 
 # Put certain workspaces on particluac monitors (in my case three)
 workspace $workspace1 output DP2-3
