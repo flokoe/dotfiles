@@ -37,3 +37,6 @@ find /etc/apt/sources.list* -type f -name '*.list' -exec bash -c 'echo -e "\n## 
 # Get trusted keys
 cp /etc/apt/trusted.gpg "$target"-trusted-keys.gpg 
 
+# Set right owner
+chown -R flo: /home/flo/Documents/pkgs
+
