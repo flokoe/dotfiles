@@ -8,6 +8,10 @@
 " disables compatibility to vi as well required by vundle
 set nocompatible
 
+" Disable modeline for security reasons (https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim. md)
+set modelines=0
+set nomodeline
+
 " loads plugins from vundle
 source ~/.vim/plugins.vim
 
