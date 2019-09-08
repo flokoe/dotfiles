@@ -2,6 +2,13 @@
 
 These are just my Linux dotfiles which I am using at work with focus on Administration / DevOps / NodeJS / Javascript. Managed with [GNU Stow](https://www.gnu.org/software/stow/). Feel free to use or get inspired, but as always take care of the dragon! (Just be carefull and know what the fuck you do ;-) ).
 
+## Features
+
+- **`stow` and `git` powered:** symlink dotfiles and thus keep them always up-to-date in your repository
+- **topical organization:** organize dotfiles by application facilitating reuse across different machines
+- **clever naming scheme:** the repository architecture is easy to browse while staying compatible with stow symlinking mechanism
+- **KISS:** there is deliberately none build script involved at all, the repository consist of dotfiles all installable using same modus operandi (`stow <directory>`)
+
 ## Install
 
 ```bash
@@ -12,37 +19,50 @@ cd  ~/.dotfiles && stow -t ~ stow
 
 ## Usage
 
-tbd
+### Install packages
 
-<!-- After the cloning is finished you can install the files you want. For example you only want to install the configuration files for urxvt:
+```bash
+stow $PACKAGE_NAME
 ```
-cd ~/dotfiles/
-stow urxvt/
+
+### Reinstall / Update packages
+
+```bash
+stow -R $PACKAGE_NAME
 ```
-Stow now creates symlinks in your home directory to the neccessary files in `~/dotfiles/urxvt`.
-### Uninstallation
-If you don't want to use certain dotfiles/configuration anymore you can simply uninstall them with stow:
+
+### Uninstall packages
+
+```bash
+stow -D $PACKAGE_NAME
 ```
-cd ~/dotfiles/
-stow -D urxvt/
-```
-The option `-D` is equivalent to `--delete` and removes every symlink from your home directory pointing in the specified directory.
-### Reinstallation
-If the repository gets updated and the files/directories change you can simply reinstall the changed files:
-```
-cd ~/dotfiles/
-stow -R urxvt/
-```
-The `-R` option automatically deletes all old symlinks and creates new ones so that all files have proper and working links. -->
+
+## Rules
+
+### Documentation
+
+Each package has a `README.md` which gives a short overview of the package itself and provides notes and requirements.
+
+### Naming of directories
+
+- *lowercase* for packages to install in $HOME (the default)
+- titlecase for packages to install as root in `/` (e.g. `@Daemon-osx`)
+- leading `@` for environment packages and subpackages (e.g. `@mac`)
+- leading `_` for non packages meaning that these directories must not be stowed (e.g. `_homebrew`)
+
+Having a convention for subpackage naming enable us to write a .stow-global-ignore file so that subpackages are not symlinked when stowing parent package.
+
+<!-- ### Ignore
+
+### Secret files
+
+local includes etc. -->
 
 ## Inspiration
 
-tbd
+There are many awesome dotfile repositories, but here are those which inspired me or where I stole ideas and functionality from.
 
-<!-- andschwa's dotfiles https://github.com/andschwa/dotfiles  
-xero's dotfiles https://github.com/xero/dotfiles  
-ashishb's dotfiles https://github.com/ashishb/dotfiles/  
-square's dotfiles https://github.com/square/maximum-awesome -->
+- https://github.com/Kraymer/F-dotfiles
 
 ## License
 
