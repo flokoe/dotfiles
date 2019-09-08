@@ -1,23 +1,24 @@
 [global_config]
-  focus = sloppy
-  handle_size = 0
-  title_transmit_bg_color = "#ee829f"
-  title_inactive_bg_color = "#7780a1"
-  inactive_color_offset = 0.64
   always_split_with_profile = True
+  focus = mouse
+  handle_size = 0
+  inactive_color_offset = 0.84
+  suppress_multiple_term_dialog = True
+  title_inactive_bg_color = "#7780a1"
+  title_transmit_bg_color = "#ee829f"
 [keybindings]
   cycle_next = Unbound
   cycle_prev = Unbound
-  go_next = Unbound
-  go_prev = Unbound
-  go_up = Unbound
   go_down = Unbound
   go_left = Unbound
+  go_next = Unbound
+  go_prev = Unbound
   go_right = Unbound
-  split_horiz = <Ctrl>h
-  split_vert = <Ctrl><Alt>v
+  go_up = Unbound
   next_tab = <Ctrl>Tab
   prev_tab = <Ctrl><Shift>Tab
+  split_horiz = <Ctrl>h
+  split_vert = <Ctrl><Alt>v
   switch_to_tab_1 = <Alt>1
   switch_to_tab_2 = <Alt>2
   switch_to_tab_3 = <Alt>3
@@ -27,30 +28,29 @@
   switch_to_tab_7 = <Alt>7
   switch_to_tab_8 = <Alt>8
   switch_to_tab_9 = <Alt>9
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = flokoe
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      size = 1200, 800
+      type = Window
+[plugins]
 [profiles]
   [[default]]
-    background_image = None
+    cursor_color = "#aaaaaa"
   [[flokoe]]
     background_color = "#101218"
     background_darkness = 0.7
     background_type = transparent
-    background_image = None
     cursor_color = "#d1d4e0"
-    use_system_font = False
     font = Bitstream Vera Sans Mono 11
     foreground_color = "#d1d4e0"
-    scrollbar_position = hidden
-    scrollback_lines = 5000
     palette = "#101218:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#d1d4e0:#7780a1:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#ffffff"
+    scrollback_lines = 20000
+    scrollbar_position = hidden
+    use_system_font = False
     word_chars = "-A-Za-z0-9,./?%&#_"
-[layouts]
-  [[default]]
-    [[[window0]]]
-      type = Window
-      parent = ""
-      size = 1200, 800
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-      profile = flokoe
-[plugins]
