@@ -4,8 +4,12 @@
   handle_size = 0
   inactive_color_offset = 0.84
   suppress_multiple_term_dialog = True
-  title_inactive_bg_color = "#7780a1"
-  title_transmit_bg_color = "#ee829f"
+  title_inactive_bg_color = "#686868"
+  title_inactive_fg_color = "#282a36"
+  title_receive_bg_color = "#57c7ff"
+  title_receive_fg_color = "#f1f1f0"
+  title_transmit_bg_color = "#ff6ac1"
+  title_transmit_fg_color = "#f1f1f0"
 [keybindings]
   cycle_next = Unbound
   cycle_prev = Unbound
@@ -43,13 +47,13 @@
   [[default]]
     cursor_color = "#aaaaaa"
   [[flokoe]]
-    background_color = "#101218"
-    background_darkness = 0.7
+    background_color = "#282a36"
+    background_darkness = 0.8
     background_type = transparent
-    cursor_color = "#d1d4e0"
-    font = Bitstream Vera Sans Mono 11
-    foreground_color = "#d1d4e0"
-    palette = "#101218:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#d1d4e0:#7780a1:#ee829f:#a5ffe1:#ffefcc:#97bbf7:#c0b7f9:#97e0ff:#ffffff"
+    cursor_color = "#eff0eb"
+    font = Meslo LG S DZ 12
+    foreground_color = "#eff0eb"
+    palette = "#282a36:#ff5c57:#5af78e:#f3f99d:#57c7ff:#ff6ac1:#9aedfe:#f1f1f0:#686868:#ff5c57:#5af78e:#f3f99d:#57c7ff:#ff6ac1:#9aedfe:#eff0eb"
     scrollback_lines = 20000
     scrollbar_position = hidden
     use_system_font = False
