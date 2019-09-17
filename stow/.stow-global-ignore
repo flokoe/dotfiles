@@ -4,3 +4,4 @@
 .*.example
 ^/@.*
 README.*
+_inc
