@@ -13,6 +13,49 @@
   title_transmit_fg_color = "#f1f1f0"
   title_use_system_font = False
 [keybindings]
+  close_term = <Alt>w
+  copy = <Primary>c
+  cycle_next = <Alt>Tab
+  cycle_prev = <Shift><Alt>Tab
+  go_next = <Shift><Alt>n
+  go_prev = <Shift><Alt>p
+  group_all = Unbound
+  group_all_toggle = <Super>g
+  group_tab = Unbound
+  group_tab_toggle = <Super>t
+  insert_number = Unbound
+  insert_padded = Unbound
+  move_tab_left = <Primary><Shift>Left
+  move_tab_right = <Primary><Shift>Right
+  new_tab = <Primary>t
+  next_tab = <Primary>Tab
+  page_down = Page_Down
+  page_up = Page_Up
+  paste = <Primary>v
+  prev_tab = <Primary><Shift>Tab
+  resize_down = <Shift><Alt>Down
+  resize_left = <Shift><Alt>Left
+  resize_right = <Shift><Alt>Right
+  resize_up = <Shift><Alt>Up
+  rotate_ccw = <Shift><Alt>Page_Up
+  rotate_cw = <Shift><Alt>Page_Down
+  scaled_zoom = Unbound
+  search = <Primary>f
+  split_horiz = <Alt>h
+  split_vert = <Alt>v
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_10 = <Alt>0
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+  toggle_zoom = Unbound
+  ungroup_all = Unbound
+  ungroup_tab = Unbound
 [layouts]
   [[default]]
     [[[child1]]]
@@ -29,10 +72,11 @@
     background_color = "#282a36"
     background_darkness = 0.8
     background_type = transparent
+    cursor_color = "#eff0eb"
     font = Meslo LG S DZ 12
     foreground_color = "#eff0eb"
     palette = "#282a36:#ff5c57:#5af78e:#f3f99d:#57c7ff:#ff6ac1:#9aedfe:#f1f1f0:#686868:#ff5c57:#5af78e:#f3f99d:#57c7ff:#ff6ac1:#9aedfe:#eff0eb"
     scrollback_lines = 16384
     scrollbar_position = hidden
     use_system_font = False
-    word_chars = ',./?%&#:_'
+    word_chars = ",./?%&#:_"
