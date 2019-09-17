@@ -13,28 +13,7 @@
   title_transmit_bg_color = "#ff6ac1"
   title_transmit_fg_color = "#f1f1f0"
   title_use_system_font = False
-#[keybindings]
-#  cycle_next = Unbound
-#  cycle_prev = Unbound
-#  go_down = Unbound
-#  go_left = Unbound
-#  go_next = Unbound
-#  go_prev = Unbound
-#  go_right = Unbound
-#  go_up = Unbound
-#  next_tab = <Ctrl>Tab
-#  prev_tab = <Ctrl><Shift>Tab
-#  split_horiz = <Ctrl>h
-#  split_vert = <Ctrl><Alt>v
-#  switch_to_tab_1 = <Alt>1
-#  switch_to_tab_2 = <Alt>2
-#  switch_to_tab_3 = <Alt>3
-#  switch_to_tab_4 = <Alt>4
-#  switch_to_tab_5 = <Alt>5
-#  switch_to_tab_6 = <Alt>6
-#  switch_to_tab_7 = <Alt>7
-#  switch_to_tab_8 = <Alt>8
-#  switch_to_tab_9 = <Alt>9
+[keybindings]
 [layouts]
   [[default]]
     [[[child1]]]
