@@ -2,6 +2,8 @@
 .gitignore
 .stow-local-ignore
 .*.example
+.*.sample
 ^/@.*
 README.*
 _inc
+*local*
