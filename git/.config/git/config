@@ -1,0 +1,28 @@
+[core]
+  editor = vim
+
+[alias]
+  #co = "!f() { git checkout \"$@\" && git stash list | grep \"$1:\"; }; f"
+  #last = log -1 HEAD
+  #st = status
+  #uncommit = reset --soft HEAD~
+  #unstage = reset HEAD --
+  #lg = log --graph --abbrev-commit --decorate --date=relative --all
+
+# [diff]
+#   tool = meld
+
+# [difftool]
+#   prompt = false
+
+[help]
+  autoCorrect = -1
+
+# [merge]
+#   tool = meld
+
+# Include local configurations to overwrite existing settings or store confidential information
+# ~/.config/git/config.local will not be in version control
+# see ~/.config/git/config.local.sample for example file
+[include]
+  path = ~/.config/git/config.local
