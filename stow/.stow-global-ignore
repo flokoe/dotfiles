@@ -6,4 +6,4 @@
 ^/@.*
 README.*
 _inc
-*local*
+.*local.*
