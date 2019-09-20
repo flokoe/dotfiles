@@ -24,7 +24,7 @@ alias quit="exit"
 alias rm="rm -i"
 
 # Alias to force recursive remove
-alias rr="rm -rfi"
+alias rr="rm -rf"
 
 # Use human readable sizes
 alias df="df -h"
