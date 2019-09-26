@@ -79,4 +79,4 @@
     scrollback_lines = 16384
     scrollbar_position = hidden
     use_system_font = False
-    word_chars = ",./?%&#_"
+    word_chars = "-,./?%&#_:"
