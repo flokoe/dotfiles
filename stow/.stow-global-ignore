@@ -5,5 +5,5 @@
 .*.sample
 ^/@.*
 README.*
-_inc
+_.*
 .*local.*
