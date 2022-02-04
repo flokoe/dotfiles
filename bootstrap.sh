@@ -58,7 +58,7 @@ parse_params "$@"
 # Ensure needed binaries are installed
 DEBIAN_FRONTEND=noninteractive apt-get install -y git python3 python3-pip > /dev/null
 
-t="$(mktmp -d)"
+t="$(mktemp -d)"
 
 git clone --depth 1 https://github.com/flokoe/dotfiles.git "$t" > /dev/null && cd "$t"
 
