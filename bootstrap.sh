@@ -22,6 +22,7 @@ EOF
 cleanup() {
   trap - SIGINT SIGTERM ERR EXIT
   # script cleanup here
+  rm -r "$t" "$0"
 }
 
 msg() {
