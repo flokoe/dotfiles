@@ -22,7 +22,7 @@ EOF
 cleanup() {
   trap - SIGINT SIGTERM ERR EXIT
   # script cleanup here
-  rm -r "$t" "$0"
+  rm -r "$tmp_dir"
 }
 
 msg() {
@@ -57,11 +57,9 @@ parse_params "$@"
 # script logic starts here
 
 # Ensure needed binaries are installed
-DEBIAN_FRONTEND=noninteractive apt-get install -y git python3 python3-pip > /dev/null
+su -lc 'DEBIAN_FRONTEND=noninteractive apt-get install -y git python3 python3-pip > /dev/null' root
 
-t="$(mktemp -d)"
-
-git clone --depth 1 https://github.com/flokoe/dotfiles.git "$t" > /dev/null && cd "$t"
+git clone https://github.com/flokoe/dotfiles.git ~/.dotfiles > /dev/null && cd ~/.dotfiles
 
 # shellcheck source=/dev/null
 python3 -m venv env && source ./env/bin/activate
