@@ -5,6 +5,7 @@
 - name: Setup mouseless dev env
   hosts: all
   become: true
+  become_method: community.general.doas
 
   roles:
     - essentials
