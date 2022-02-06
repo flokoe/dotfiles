@@ -4,18 +4,18 @@
   ansible.builtin.user:
     name: root
     state: present
-    password: {{ root_password }}
+    password: "{{ root_password }}"
 
 - name: Set hostname
   anisble.builtin.hostname:
-    name: {{ hostname }}
+    name: "{{ hostname }}"
     use: systemd
 
 - name: Set password for normal user
   anisble.builtin.user:
     state: present
-    name: {{ user.name }}
-    password: {{ user.password }}
+    name: "{{ user.name }}"
+    password: "{{ user.password }}"
 
 # - name: Add SSH keys
 #   when: user.ssh_keys is defined
@@ -23,16 +23,16 @@
 - name: Create SSH key
   ansible.builtin.user:
     state: present
-    name: {{ user.name }}
+    name: "{{ user.name }}"
     generate_ssh_key: true
     ssh_key_type: ed25519
     ssh_key_comment: "{{ user.name }}@{{ hostname }}"
-    ssh_key_passphrase: {{ user.ssh_key_password }}
+    ssh_key_passphrase: "{{ user.ssh_key_password }}"
   when: user.ssh_keys is not defined and user.ssh_key_password is defined
 
 - name: Install basic binaries
   ansible.builtin.package:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   loop:
     - git
