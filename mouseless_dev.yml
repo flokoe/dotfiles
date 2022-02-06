@@ -1,0 +1,10 @@
+---
+# This playbook installs and configures a keyboard centric
+# dev environment based on modern software
+
+- name: Setup mouseless dev env
+  become: true
+
+  roles:
+    - essentials
+    - doas

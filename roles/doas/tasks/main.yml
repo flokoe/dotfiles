@@ -1,0 +1,16 @@
+---
+# Install and configure doas, a modern and secure sudo replacement.
+
+- name: Install package 'doas'
+  ansible.builtin.package:
+    name: doas
+    state: present
+
+- name: Add 'doas' config
+  ansible.builtin.template:
+    dest: /etc/doas.conf
+    group: root
+    mode: 0600
+    owner: root
+    src: doas.conf.j2
+    validate: /usr/bin/doas -C %s
