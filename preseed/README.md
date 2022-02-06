@@ -18,4 +18,4 @@ In the menu of netboot.xyz select *Linux Network Installs* > `$DISTRO` > `$RELEA
 
 | Name | URL | Description |
 | --- | --- | ---|
-| `debian11_enc_mouseless_dev.cfg` | <https://tinyurl.com/ycxfafvn> | Preseed for Debian 11, but should work for older versions as well. Configures Debian with separate root, home and swap partion in encrypted lvm volume. Automatically runs mousless dev playbook. |
+| `debian11_enc_mouseless_dev.cfg` | <https://tinyurl.com/tkw3emnd> | Preseed for Debian 11, but should work for older versions as well. Configures Debian with separate root, home and swap partion in encrypted lvm volume. Automatically runs mousless dev playbook. |
