@@ -22,7 +22,6 @@ EOF
 cleanup() {
   trap - SIGINT SIGTERM ERR EXIT
   # script cleanup here
-  rm -r "$tmp_dir"
 }
 
 msg() {
