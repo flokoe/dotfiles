@@ -56,12 +56,15 @@ parse_params "$@"
 # script logic starts here
 
 # Ensure needed binaries are installed
-su -lc 'DEBIAN_FRONTEND=noninteractive apt-get install -y git python3 python3-pip > /dev/null' root
+su -lc 'DEBIAN_FRONTEND=noninteractive apt-get install -y git gcc libffi-dev python3 python3-pip python3-venv' root
 
-git clone https://github.com/flokoe/dotfiles.git ~/.dotfiles > /dev/null && cd ~/.dotfiles
+[[ -d ~/.dotfiles ]] || git clone https://github.com/flokoe/dotfiles.git ~/.dotfiles
+
+cd ~/.dotfiles
 
 # shellcheck source=/dev/null
-python3 -m venv env && source ./env/bin/activate
-
-pip3 install wheel
+python3 -m venv env &&
+source ./env/bin/activate &&
+pip3 install --upgrade pip &&
+pip3 install wheel &&
 pip3 install ansible
