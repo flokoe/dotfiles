@@ -56,7 +56,7 @@ parse_params "$@"
 # script logic starts here
 
 # Ensure needed binaries are installed
-su -lc 'DEBIAN_FRONTEND=noninteractive apt-get install -y git gcc libffi-dev python3 python3-pip python3-venv' root
+su -lc 'DEBIAN_FRONTEND=noninteractive apt-get install -y git whois libffi-dev python3 python3-pip python3-venv' root
 
 [[ -d ~/.dotfiles ]] || git clone https://github.com/flokoe/dotfiles.git ~/.dotfiles
 
