@@ -7,12 +7,12 @@
     password: "{{ root_password }}"
 
 - name: Set hostname
-  anisble.builtin.hostname:
+  ansible.builtin.hostname:
     name: "{{ hostname }}"
     use: systemd
 
 - name: Set password for normal user
-  anisble.builtin.user:
+  ansible.builtin.user:
     state: present
     name: "{{ user.name }}"
     password: "{{ user.password }}"
