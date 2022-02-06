@@ -8,5 +8,5 @@
   become_method: community.general.doas
 
   roles:
-    - essentials
     - doas
+    - essentials
