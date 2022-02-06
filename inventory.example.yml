@@ -1,0 +1,11 @@
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+      root_password:
+      hostname: flokoe-dev
+      user:
+        name: florian
+        password:
+        ssh_keys:
+        ssh_key_password:
