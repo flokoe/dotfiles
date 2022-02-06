@@ -2,6 +2,8 @@
 
 These are just my Linux dotfiles which I am using at work with focus on Administration / DevOps / NodeJS / Javascript. Managed with [GNU Stow](https://www.gnu.org/software/stow/). Feel free to use or get inspired, but as always take care of the dragon! (Just be carefull and know what the fuck you do ;-) ).
 
+https://tinyurl.com/ybp8juhs
+
 ## Features
 
 - **`stow` and `git` powered:** symlink dotfiles and thus keep them always up-to-date in your repository
