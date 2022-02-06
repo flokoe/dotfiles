@@ -3,6 +3,7 @@
 # dev environment based on modern software
 
 - name: Setup mouseless dev env
+  hosts: all
   become: true
 
   roles:
