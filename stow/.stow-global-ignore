@@ -1,9 +1,0 @@
-.git
-.gitignore
-.stow-local-ignore
-.*.example
-.*.sample
-^/@.*
-README.*
-_.*
-.*local.*
