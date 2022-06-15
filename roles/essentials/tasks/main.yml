@@ -1,41 +1,50 @@
 ---
+# tasks file for essentials
 
-- name: Set password for normal user
-  ansible.builtin.user:
+- name: Include OS-specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Ensure 'Hack' font exists
+  ansible.builtin.package:
+    name: "{{ hack_font_package_name }}"
     state: present
-    name: "{{ user.name }}"
-    password: "{{ user.password }}"
 
-- name: Set root password
-  ansible.builtin.user:
-    name: root
-    state: present
-    password: "{{ root_password }}"
+# - name: Set password for normal user
+#   ansible.builtin.user:
+#     state: present
+#     name: "{{ user.name }}"
+#     password: "{{ user.password }}"
 
-- name: Set hostname
-  ansible.builtin.hostname:
-    name: "{{ hostname }}"
-    use: systemd
+# - name: Set root password
+#   ansible.builtin.user:
+#     name: root
+#     state: present
+#     password: "{{ root_password }}"
+
+# - name: Set hostname
+#   ansible.builtin.hostname:
+#     name: "{{ hostname }}"
+#     use: systemd
 
 # - name: Add SSH keys
 #   when: user.ssh_keys is defined
 
-- name: Create SSH key
-  ansible.builtin.user:
-    state: present
-    name: "{{ user.name }}"
-    generate_ssh_key: true
-    ssh_key_type: ed25519
-    ssh_key_comment: "{{ user.name }}@{{ hostname }}"
-    ssh_key_passphrase: "{{ user.ssh_key_password }}"
-  when: user.ssh_keys is not defined and user.ssh_key_password is defined
+# - name: Create SSH key
+#   ansible.builtin.user:
+#     state: present
+#     name: "{{ user.name }}"
+#     generate_ssh_key: true
+#     ssh_key_type: ed25519
+#     ssh_key_comment: "{{ user.name }}@{{ hostname }}"
+#     ssh_key_passphrase: "{{ user.ssh_key_password }}"
+#   when: user.ssh_keys is not defined and user.ssh_key_password is defined
 
-- name: Install basic binaries
-  ansible.builtin.package:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - git
-    - curl
-    - vim
-    - ncdu
+# - name: Install basic binaries
+#   ansible.builtin.package:
+#     name: "{{ item }}"
+#     state: present
+#   loop:
+#     - git
+#     - curl
+#     - vim
+#     - ncdu
