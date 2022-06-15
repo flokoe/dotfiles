@@ -1,4 +1,0 @@
-#!/bin/sh
-
-/usr/bin/rsnapshot sync && /usr/bin/rsnapshot daily
-
