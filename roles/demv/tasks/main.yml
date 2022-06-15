@@ -5,5 +5,4 @@
   ansible.builtin.copy:
     backup: true
     dest: "{{ user_home }}/.ssh/conf.d/02-demv.conf"
-    mode: 0644
     src: ssh_config.conf
