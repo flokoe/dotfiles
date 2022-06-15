@@ -3,3 +3,4 @@ vim/.vim/.netrwhist
 *local
 env
 inventory.yml
+vault_password_file
