@@ -9,6 +9,11 @@
     name: "{{ hack_font_package_name }}"
     state: present
 
+- name: Ensure ~/.local/bin directory exists
+  ansible.builtin.file:
+    path: "{{ user_home }}/.local/bin"
+    state: directory
+
 # - name: Set password for normal user
 #   ansible.builtin.user:
 #     state: present
