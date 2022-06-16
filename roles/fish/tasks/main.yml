@@ -6,7 +6,13 @@
     name: fish
     state: present
 
-- name: Copy config file
+- name: Ensure starship prompt is installed
+  ansible.builtin.unarchive:
+    src: https://github.com/starship/starship/releases/download/v1.8.0/starship-x86_64-unknown-linux-musl.tar.gz
+    dest: "{{ user_home }}/.local/bin/"
+    remote_src: yes
+
+- name: Copy fish config file
   ansible.builtin.copy:
     backup: true
     dest: "{{ user_home }}/.config/fish/config.fish"
@@ -18,6 +24,12 @@
     dest: "{{ user_home }}/.config/fish/fish_plugins"
     src: fish_plugins
   register: copy_fish_plugins_result
+
+- name: Copy starship config file
+  ansible.builtin.copy:
+    backup: true
+    dest: "{{ user_home }}/.config/starship.toml"
+    src: starship.toml
 
 - name: Check if fisher exists
   stat:
