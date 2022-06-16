@@ -1,0 +1,61 @@
+---
+# tasks file for fish
+
+- name: Ensure fish is installed
+  ansible.builtin.package:
+    name: fish
+    state: present
+
+- name: Copy config file
+  ansible.builtin.copy:
+    backup: true
+    dest: "{{ user_home }}/.config/fish/config.fish"
+    src: config.fish
+
+- name: Copy fish_plugins file
+  ansible.builtin.copy:
+    backup: true
+    dest: "{{ user_home }}/.config/fish/fish_plugins"
+    src: fish_plugins
+  register: copy_fish_plugins_result
+
+- name: Check if fisher exists
+  stat:
+    path: "{{ user_home }}/.config/fish/functions/fisher.fish"
+  register: fisher_stat_result
+
+- name: Get fisher install script
+  ansible.builtin.uri:
+    url: https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
+    return_content: yes
+  register: fisher_install_script
+  when: not fisher_stat_result.stat.exists
+
+- name: Init fisher and install all plugins
+  ansible.builtin.shell:
+    executable: /usr/bin/fish
+    cmd: source && fisher update
+    stdin: "{{ fisher_install_script.content }}"
+  when: fisher_install_script is not skipped
+
+- name: Fisher update plugins
+  ansible.builtin.shell:
+    executable: /usr/bin/fish
+    cmd: fisher update
+  when: fisher_install_script is skipped and copy_fish_plugins_result.changed
+
+# Download theme directly instead of using fisher.
+# See https://github.com/catppuccin/fish/issues/4
+- name: Ensure color scheme catppuccin frappe exists
+  ansible.builtin.get_url:
+    checksum: sha256:cc534b5ddd179a27c4fc62acb045bfd26fcb02b8ea9408d8e384257fad5dd16d
+    dest: "{{ user_home }}/.config/fish/conf.d/catppuccin_frappe.fish"
+    url: https://raw.githubusercontent.com/catppuccin/fish/main/conf.d/frappe.fish
+
+- name: Ensure fish is set as default login shell
+  become: yes
+  ansible.builtin.user:
+    name: "{{ username }}"
+    shell: /usr/bin/fish
+    state: present
+  when: make_fish_default_login_shell | bool
