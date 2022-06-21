@@ -64,6 +64,12 @@
     dest: "{{ user_home }}/.config/fish/conf.d/catppuccin_frappe.fish"
     url: https://raw.githubusercontent.com/catppuccin/fish/main/conf.d/frappe.fish
 
+- name: Copy all autoload functions
+  ansible.builtin.copy:
+    backup: true
+    dest: "{{ user_home }}/.config/fish/functions/"
+    src: functions/
+
 - name: Ensure fish is set as default login shell
   become: yes
   ansible.builtin.user:
