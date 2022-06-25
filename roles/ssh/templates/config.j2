@@ -1,0 +1,14 @@
+# Place configs for specific servers into this directory.
+# First match will be used.
+Include conf.d/*.conf
+
+# Default settings.
+Host *
+  User {{ ssh_user }}
+
+  TCPKeepAlive no
+  ServerAliveInterval 120
+
+  ControlMaster auto
+  ControlPath ~/.ssh/control/%r.%h.%p.sock
+  ControlPersist 1800
