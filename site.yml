@@ -1,0 +1,11 @@
+---
+# This playbook installs and configures my dev environment
+
+- name: Setup dev env
+  hosts: all
+
+  roles:
+    - essentials
+    - ssh
+    - fish
+    - demv
