@@ -55,12 +55,7 @@ disabled = true
 # [directory.substitutions]
 
 [docker_context]
-detect_files = [
-    'docker-compose.yml',
-    'docker-compose.yaml',
-    'Dockerfile',
-    'system.yml',
-]
+only_with_files = false
 
 [dotnet]
 disabled = true
