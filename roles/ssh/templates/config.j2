@@ -5,9 +5,9 @@ Include conf.d/*.conf
 # Default settings.
 Host *
   User {{ ssh_user }}
-
   TCPKeepAlive no
   ServerAliveInterval 120
+  PreferredAuthentications publickey
 
   ControlMaster auto
   ControlPath ~/.ssh/control/%r.%h.%p.sock
