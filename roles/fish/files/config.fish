@@ -1,3 +1,5 @@
+# MANAGED BY ANSIBLE, DO NOT TOUCH
+
 # Commands to run in interactive sessions can go here
 if status is-interactive
     # Disable greeting on startup

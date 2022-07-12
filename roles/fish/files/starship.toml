@@ -1,3 +1,5 @@
+# MANAGED BY ANSIBLE, DO NOT TOUCH
+
 [aws]
 disabled = true
 
