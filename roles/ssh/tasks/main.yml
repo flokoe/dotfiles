@@ -22,3 +22,9 @@
     backup: true
     dest: "{{ user_home }}/.ssh/config"
     src: config.j2
+
+- name: Copy misc ssh config
+  ansible.builtin.copy:
+    backup: true
+    dest: "{{ user_home }}/.ssh/conf.d/02-misc.conf"
+    src: misc_ssh.conf
