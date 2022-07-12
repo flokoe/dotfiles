@@ -1,0 +1,5 @@
+# MANAGED BY ANSIBLE, DO NOT TOUCH
+
+function df --description 'alias df=df -h'
+  command df -h $argv;
+end
