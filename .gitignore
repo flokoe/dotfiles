@@ -4,3 +4,4 @@ vim/.vim/.netrwhist
 env
 inventory.yml
 vault_password_file
+password_files
