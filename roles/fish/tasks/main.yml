@@ -71,7 +71,7 @@
     src: functions/
 
 - name: Ensure fish is set as default login shell
-  become: yes
+  become: true
   ansible.builtin.user:
     name: "{{ username }}"
     shell: /usr/bin/fish
