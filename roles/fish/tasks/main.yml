@@ -58,11 +58,11 @@
 
 # Download theme directly instead of using fisher.
 # See https://github.com/catppuccin/fish/issues/4
-- name: Ensure color scheme catppuccin frappe exists
+- name: Ensure color scheme catppuccin mocha exists
   ansible.builtin.get_url:
-    checksum: sha256:cc534b5ddd179a27c4fc62acb045bfd26fcb02b8ea9408d8e384257fad5dd16d
-    dest: "{{ user_home }}/.config/fish/conf.d/catppuccin_frappe.fish"
-    url: https://raw.githubusercontent.com/catppuccin/fish/main/conf.d/frappe.fish
+    checksum: sha256:101fb3b8eee4903bc79921bd255fa3d95413b9317c90df36abecf384bbea1175
+    dest: "{{ user_home }}/.config/fish/conf.d/catppuccin_theme.fish"
+    url: https://raw.githubusercontent.com/catppuccin/fish/main/conf.d/mocha.fish
 
 - name: Copy all autoload functions
   ansible.builtin.copy:
