@@ -8,5 +8,8 @@ if status is-interactive
     # Set important variables
     set -gx EDITOR vim
 
+    # Enable colors for ls in kitty
+    dircolors -c | source
+
     starship init fish | source
 end
