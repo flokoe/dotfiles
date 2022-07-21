@@ -1,6 +1,11 @@
 ---
 # tasks file for kitty
 
+- name: Ensure kitty is installed
+  ansible.builtin.package:
+    name: kitty
+    state: present
+
 - name: Ensure color scheme catppuccin mocha exists
   ansible.builtin.get_url:
     checksum: sha256:2bec3b5134a4a7637ab48af651e1466235aabc50a39853d44c4d97e0a4e84334

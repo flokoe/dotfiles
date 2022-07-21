@@ -1,0 +1,8 @@
+---
+# tasks file for roles/nvim
+
+- name: Ensure nvim is installed
+  become: true
+  ansible.builtin.package:
+    name: neovim
+    state: present
