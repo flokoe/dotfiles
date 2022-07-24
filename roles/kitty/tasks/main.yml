@@ -12,6 +12,12 @@
     dest: "{{ user_home }}/.config/kitty/catppuccin_theme.conf"
     url: https://raw.githubusercontent.com/catppuccin/kitty/main/mocha.conf
 
+- name: Copy ssh kitten config file
+  ansible.builtin.copy:
+    backup: true
+    dest: "{{ user_home }}/.config/kitty/ssh.conf"
+    src: ssh.conf
+
 - name: Copy kitty config file
   ansible.builtin.copy:
     backup: true
