@@ -1,0 +1,76 @@
+---
+
+- name: Ensure font directory exist
+  ansible.builtin.file:
+    path: ~/.local/share/fonts
+    state: directory
+
+###
+
+- name: Check Hack font archive
+  ansible.builtin.stat:
+    path: "~/.local/share/fonts/{{ default_fonts.Hack | split('/') | last }}"
+  register: hack_archive
+
+- name: Download Hack font
+  ansible.builtin.get_url:
+    dest: ~/.local/share/fonts
+    url: "{{ default_fonts.Hack }}"
+  register: hack_download
+  when: not hack_archive.stat.exists
+
+- name: Extract Hack font
+  ansible.builtin.unarchive:
+    src: "{{ hack_download.dest }}"
+    dest: ~/.local/share/fonts
+    creates: ~/.local/share/fonts/Hack
+  register: hack_font
+  when: hack_download.changed
+
+- name: Rename Hack font directory
+  ansible.builtin.command:
+    cmd: mv --force ~/.local/share/fonts/ttf ~/.local/share/fonts/Hack
+  when: hack_font.changed
+
+- name: Set font_changes
+  ansible.builtin.set_fact:
+    font_changes: true
+  when: hack_font.changed
+
+###
+
+- name: Check HackNerdFont archive
+  ansible.builtin.stat:
+    path: "~/.local/share/fonts/{{ default_fonts.HackNerdFont | split('/') | last }}"
+  register: hack_nerd_font_archive
+
+- name: Download HackNerdFont
+  ansible.builtin.get_url:
+    dest: ~/.local/share/fonts
+    url: "{{ default_fonts.HackNerdFont }}"
+  register: hack_nerd_font_download
+  when: not hack_nerd_font_archive.stat.exists
+
+- name: Ensure HackNerdFont directory exist
+  ansible.builtin.file:
+    path: ~/.local/share/fonts/HackNerdFont
+    state: directory
+
+- name: Extract HackNerdFont
+  ansible.builtin.unarchive:
+    src: "{{ hack_nerd_font_download.dest }}"
+    dest: ~/.local/share/fonts/HackNerdFont
+  register: hack_nerd_font
+  when: hack_nerd_font_download.changed
+
+- name: Set font_changes
+  ansible.builtin.set_fact:
+    font_changes: true
+  when: hack_nerd_font.changed
+
+###
+
+- name: Update font cache
+  ansible.builtin.command:
+    cmd: fc-cache
+  when: font_changes | default(false)
