@@ -1,0 +1,4 @@
+all:
+  hosts:
+    fkoehler-nb:
+      ansible_connection: local
