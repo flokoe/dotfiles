@@ -2,5 +2,28 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "_version variables in defaults/main.yml files",
+      "fileMatch": [
+        "roles/*/defaults/main.yml"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>.+) depName=(?<depName>.+)\\n.*_version: (?<currentValue>.+)\\n"
+      ]
+    },
+    {
+      "customType": "regex",
+      "description": "Extract version from GH URLs in defaults/main.yml files",
+      "fileMatch": [
+        "roles/*/defaults/main.yml"
+      ],
+      "matchStrings": [
+        "https:\\/\\/github\\.com\\/(?<depName>.+)\\/releases\\/download\\/(?<currentValue>.+)\\/.*\\n"
+      ],
+      "datasourceTemplate": "github-releases"
+    }
   ]
 }
