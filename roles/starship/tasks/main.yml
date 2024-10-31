@@ -1,0 +1,13 @@
+---
+
+- name: Ensure starship prompt is installed
+  ansible.builtin.unarchive:
+    dest: ~/bin
+    mode: "0755"
+    remote_src: true
+    src: "https://github.com/starship/starship/releases/download/{{ starship_version }}/starship-x86_64-unknown-linux-musl.tar.gz"
+
+- name: Copy starship config file
+  ansible.builtin.copy:
+    dest: ~/.config/starship.toml
+    src: starship.toml
