@@ -2,6 +2,6 @@ vim/.vim/bundle/
 vim/.vim/.netrwhist
 *local
 env
-inventory.yml
+venv
 vault_password_file
 password_files
