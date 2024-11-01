@@ -1,30 +1,27 @@
 ---
-# tasks file for ssh
 
 - name: Ensure .ssh directory exists and has correct permissions
   ansible.builtin.file:
     mode: 0700
-    path: "{{ user_home }}/.ssh"
+    path: ~/.ssh
     state: directory
 
 - name: Ensure .ssh/conf.d directory exists
   ansible.builtin.file:
-    path: "{{ user_home }}/.ssh/conf.d"
+    path: ~/.ssh/conf.d
     state: directory
 
 - name: Ensure .ssh/control directory exists
   ansible.builtin.file:
-    path: "{{ user_home }}/.ssh/control"
+    path: ~/.ssh/control
     state: directory
 
 - name: Ensure ssh config exists
   ansible.builtin.template:
-    backup: true
-    dest: "{{ user_home }}/.ssh/config"
+    dest: ~/.ssh/config
     src: config.j2
 
 - name: Copy misc ssh config
   ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.ssh/conf.d/02-misc.conf"
+    dest: ~/.ssh/conf.d/02-misc.conf
     src: misc_ssh.conf

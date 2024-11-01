@@ -6,10 +6,11 @@ Include conf.d/*.conf
 
 # Default settings.
 Host *
-  User {{ ssh_user }}
+  User {{ username }}
   TCPKeepAlive no
   ServerAliveInterval 120
   PreferredAuthentications publickey
+  ForwardAgent no
 
   ControlMaster auto
   ControlPath ~/.ssh/control/%r.%h.%p.sock
