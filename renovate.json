@@ -11,7 +11,7 @@
         "roles/*/defaults/main.yml"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.+) depName=(?<depName>.+)\\n.*_version: (?<currentValue>.+)\\n"
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\n.*_version: (?<currentValue>.*?)\\n"
       ]
     },
     {
@@ -21,7 +21,7 @@
         "roles/*/defaults/main.yml"
       ],
       "matchStrings": [
-        "https:\\/\\/github\\.com\\/(?<depName>.+)\\/releases\\/download\\/(?<currentValue>.+)\\/.*\\n"
+        "https:\\/\\/github\\.com\\/(?<depName>.*?)\\/releases\\/download\\/(?<currentValue>.*?)\\/.*\\n"
       ],
       "datasourceTemplate": "github-releases"
     }
