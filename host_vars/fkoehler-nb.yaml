@@ -3,3 +3,6 @@
 default_roles:
   - fonts
   - starship
+  - fish
+
+username: fkoehler

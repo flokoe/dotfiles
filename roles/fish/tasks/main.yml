@@ -1,74 +1,48 @@
 ---
-# tasks file for fish
 
 - name: Ensure fish is installed
   ansible.builtin.package:
     name: fish
     state: present
 
-- name: Ensure starship prompt is installed
-  ansible.builtin.unarchive:
-    src: https://github.com/starship/starship/releases/download/v1.8.0/starship-x86_64-unknown-linux-musl.tar.gz
-    dest: "{{ user_home }}/.local/bin/"
-    remote_src: yes
-
-- name: Copy fish config file
-  ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.config/fish/config.fish"
-    src: config.fish
-
 - name: Copy fish_plugins file
   ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.config/fish/fish_plugins"
+    dest: ~/.config/fish/fish_plugins
     src: fish_plugins
-  register: copy_fish_plugins_result
-
-- name: Copy starship config file
-  ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.config/starship.toml"
-    src: starship.toml
+  register: copy_fish_plugins
 
 - name: Check if fisher exists
-  stat:
-    path: "{{ user_home }}/.config/fish/functions/fisher.fish"
-  register: fisher_stat_result
+  ansible.builtin.stat:
+    path: ~/.config/fish/functions/fisher.fish
+  register: fisher_stat
 
-- name: Get fisher install script
-  ansible.builtin.uri:
-    url: https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
-    return_content: yes
-  register: fisher_install_script
-  when: not fisher_stat_result.stat.exists
-
-- name: Init fisher and install all plugins
+- name: Init fisher
   ansible.builtin.shell:
-    executable: /usr/bin/fish
-    cmd: source && fisher update
-    stdin: "{{ fisher_install_script.content }}"
-  when: fisher_install_script is not skipped
+    executable: fish
+    cmd: curl -sL https://git.io/fisher | source && fisher update
+  register: fisher_init
+  when: not fisher_stat.stat.exists
 
 - name: Fisher update plugins
   ansible.builtin.shell:
-    executable: /usr/bin/fish
+    executable: fish
     cmd: fisher update
-  when: fisher_install_script is skipped and copy_fish_plugins_result.changed
+  when: copy_fish_plugins.changed and not fisher_init.changed
 
-# Download theme directly instead of using fisher.
-# See https://github.com/catppuccin/fish/issues/4
-- name: Ensure color scheme catppuccin mocha exists
-  ansible.builtin.get_url:
-    checksum: sha256:101fb3b8eee4903bc79921bd255fa3d95413b9317c90df36abecf384bbea1175
-    dest: "{{ user_home }}/.config/fish/conf.d/catppuccin_theme.fish"
-    url: https://raw.githubusercontent.com/catppuccin/fish/main/conf.d/mocha.fish
+- name: Copy fish config file
+  ansible.builtin.copy:
+    dest: ~/.config/fish/config.fish
+    src: config.fish
 
 - name: Copy all autoload functions
   ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.config/fish/functions/"
+    dest: ~/.config/fish/functions/
     src: functions/
+
+- name: Select theme
+  ansible.builtin.shell:
+    executable: fish
+    cmd: echo y | fish_config theme save "Catppuccin Mocha"
 
 - name: Ensure fish is set as default login shell
   become: true
@@ -76,4 +50,3 @@
     name: "{{ username }}"
     shell: /usr/bin/fish
     state: present
-  when: make_fish_default_login_shell | bool

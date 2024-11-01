@@ -1,4 +1,0 @@
----
-# defaults file for fish
-
-make_fish_default_login_shell: true
