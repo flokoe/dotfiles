@@ -1,0 +1,32 @@
+---
+
+- name: Install flatpaks
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - com.bitwarden.desktop
+    - com.discordapp.Discord
+    - com.github.johnfactotum.Foliate
+    - com.github.tchx84.Flatseal
+    - com.github.unrud.VideoDownloader
+    - com.logseq.Logseq
+    - com.obsproject.Studio
+    - com.rustdesk.RustDesk
+    - com.spotify.Client
+    - com.valvesoftware.Steam
+    - io.github.nokse22.Exhibit
+    - io.github.seadve.Kooha
+    - io.github.zen_browser.zen
+    - org.gnome.Solanum
+    - org.gnome.World.PikaBackup
+    - org.localsend.localsend_app
+    - org.nickvision.tubeconverter
+    - org.pulseaudio.pavucontrol
+    - org.remmina.Remmina
+    # - com.nextcloud.desktopclient.nextcloud
+    # - com.visualstudio.code
+    # - flathub de.k_bo.Televido
+    # - io.gitlab.news_flash.NewsFlash
+    # - org.flameshot.Flameshot
+    # - org.learningequality.Kolibri
