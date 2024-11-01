@@ -1,3 +1,0 @@
-# DEMV
-
-DEMV specific configs.
