@@ -5,6 +5,7 @@ default_roles:
   - ssh
   - fonts
   - starship
+  - neovim
   - fish
   - kitty
   - demv
