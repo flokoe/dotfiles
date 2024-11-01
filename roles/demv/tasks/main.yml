@@ -4,3 +4,8 @@
   ansible.builtin.copy:
     dest: ~/.ssh/conf.d/02-demv.conf"
     src: ssh_config.conf
+
+- name: Install slack
+  community.general.flatpak:
+    name: com.slack.Slack
+    state: present
