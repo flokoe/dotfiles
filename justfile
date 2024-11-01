@@ -46,7 +46,7 @@ bootstrap JUST_BIN TAGS="all": ensure_packages
     @echo "Create venv..."
     @python3 -m venv ~/Projects/dotfiles/venv
     @echo "Install Ansible..."
-    @cd ~/Projects/dotfiles && source venv/bin/activate && python3 -m pip install --require-virtualenv pyproject.toml
+    @cd ~/Projects/dotfiles && source venv/bin/activate && pip install --require-virtualenv -r requirements.txt
     @echo -e "Run Ansible playbook...\n"
     @{{JUST_BIN}} ~/Projects/dotfiles/install {{TAGS}}
 
