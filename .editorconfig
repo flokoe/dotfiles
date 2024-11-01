@@ -17,3 +17,6 @@ max_line_length = 100
 
 [*.md]
 trim_trailing_whitespace = false
+
+[{justfile,*.just}]
+indent_size = 4
