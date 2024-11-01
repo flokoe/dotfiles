@@ -6,22 +6,13 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "_version variables in defaults/main.yml files",
+      "description": "GH Releases from URLs and _version in defaults/main.yml files",
       "fileMatch": [
         "defaults\\/main\\.yml$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) packageName=(?<packageName>.*?)\\n.*_version: (?<currentValue>.*?)\\n"
-      ]
-    },
-    {
-      "customType": "regex",
-      "description": "Extract version from GH URLs in defaults/main.yml files",
-      "fileMatch": [
-        "defaults\\/main\\.yml$"
-      ],
-      "matchStrings": [
-        "https:\\/\\/github\\.com\\/(?<packageName>.*?)\\/releases\\/download\\/(?<currentValue>.*?)\\/.*\\n"
+        "https:\\/\\/github\\.com\\/(?<packageName>.*?)\\/releases\\/download\\/(?<currentValue>.*?)\\/.*\\n",
+        "# renovate: datasource=github-releases packageName=(?<packageName>.*?)\\n.*_version: (?<currentValue>.*?)\\n"
       ],
       "datasourceTemplate": "github-releases"
     }
