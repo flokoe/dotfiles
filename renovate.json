@@ -11,7 +11,7 @@
         "defaults\\/main\\.yml$"
       ],
       "matchStrings": [
-        "https:\\/\\/github\\.com\\/(?<packageName>.*?)\\/releases\\/download\\/(?<currentValue>.*?)\\/.*\\n",
+        "https:\\/\\/github\\.com\\/(?<packageName>[a-zA-Z0-9_.-]*?)\\/releases\\/download\\/(?<currentValue>[a-zA-Z0-9_.-]*?)\\/.*\\n",
         "# renovate: datasource=github-releases packageName=(?<packageName>.*?)\\n.*_version: (?<currentValue>.*?)\\n"
       ],
       "datasourceTemplate": "github-releases"

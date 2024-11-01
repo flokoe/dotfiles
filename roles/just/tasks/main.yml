@@ -1,0 +1,29 @@
+---
+
+- name: "Download just"
+  ansible.builtin.get_url:
+    checksum: "{{ just_checksum }}"
+    decompress: false
+    dest: /tmp/just.tar.gz
+    url: "https://github.com/casey/just/releases/download/{{ just_version }}/just-{{ just_version }}-x86_64-unknown-linux-musl.tar.gz"
+  register: just_download
+
+- name: Extract just
+  ansible.builtin.unarchive:
+    dest: ~/bin
+    include: just
+    mode: "0755"
+    src: /tmp/just.tar.gz
+  when: just_download.changed
+
+- name: Check if fish is installed
+  ansible.builtin.stat:
+    path: ~/.config/fish/config.fish
+  register: fish_installed
+
+- name: Extract just completions for fish
+  ansible.builtin.unarchive:
+    dest: ~/.config/fish
+    include: completions/just.fish
+    src: /tmp/just.tar.gz
+  when: just_download.changed and fish_installed.stat.exists

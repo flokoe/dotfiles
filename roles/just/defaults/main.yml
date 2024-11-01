@@ -1,0 +1,5 @@
+---
+
+# renovate: datasource=github-releases packageName=casey/just
+just_version: "1.36.0"
+just_checksum: sha256:bc7c9f377944f8de9cd0418b11d2955adebfa25a488c0b5e3dd2d2c0e9d732da
