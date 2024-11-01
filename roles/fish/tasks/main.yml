@@ -1,5 +1,4 @@
 ---
-
 - name: Ensure fish is installed
   ansible.builtin.package:
     name: fish
@@ -39,10 +38,18 @@
     dest: ~/.config/fish/functions/
     src: functions/
 
+- name: Check if theme exists
+  ansible.builtin.lineinfile:
+    line: SETUVAR fish_color_normal:cdd6f4
+    path: ~/.config/fish/fish_variables
+    state: present
+  register: theme_grep
+
 - name: Select theme
   ansible.builtin.shell:
     executable: fish
     cmd: echo y | fish_config theme save "Catppuccin Mocha"
+  when: theme_grep.changed
 
 - name: Ensure fish is set as default login shell
   become: true
