@@ -1,29 +1,9 @@
 ---
-# tasks file for essentials
-
-- name: Include OS-specific variables
-  include_vars: "{{ ansible_os_family }}.yml"
-
-- name: Include OS-specific tasks
-  include_tasks: "{{ ansible_os_family }}.yml"
-
-- name: Ensure 'Hack' font exists
-  ansible.builtin.package:
-    name: "{{ hack_font_package_name }}"
-    state: present
 
 - name: Ensure ~/.local/bin directory exists
   ansible.builtin.file:
-    path: "{{ user_home }}/.local/bin"
+    path: ~/.local/bin
     state: directory
-
-- name: Add notification to drink water
-  ansible.builtin.cron:
-    hour: '*/2'
-    job: XDG_RUNTIME_DIR="/run/user/$(/usr/bin/id -u)" /usr/bin/notify-send -u critical -i ~/.config/dotfiles/roles/essentials/files/water-bottle.png "Erinnerung" "Trink was Junge!" &> /dev/null
-    minute: 7
-    name: drink-reminder
-    state: present
 
 # - name: Set password for normal user
 #   ansible.builtin.user:
