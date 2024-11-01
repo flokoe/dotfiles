@@ -1,3 +1,8 @@
+# List all available recipes.
+[private]
+default:
+    @just --list
+
 # Ensure all required packages for bootstraping are installed.
 [private]
 ensure_packages:
