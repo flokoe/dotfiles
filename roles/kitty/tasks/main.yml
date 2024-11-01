@@ -1,25 +1,21 @@
 ---
-# tasks file for kitty
 
 - name: Ensure kitty is installed
   ansible.builtin.package:
     name: kitty
     state: present
 
-- name: Ensure color scheme catppuccin mocha exists
-  ansible.builtin.get_url:
-    checksum: sha256:2bec3b5134a4a7637ab48af651e1466235aabc50a39853d44c4d97e0a4e84334
-    dest: "{{ user_home }}/.config/kitty/catppuccin_theme.conf"
-    url: https://raw.githubusercontent.com/catppuccin/kitty/main/mocha.conf
+- name: Create Catpuccin Mocha theme config
+  ansible.builtin.shell:
+    cmd: kitty +kitten themes --dump-theme Catppuccin-Mocha > ~/.config/kitty/Catppuccin-Mocha.conf
+    creates: ~/.config/kitty/Catppuccin-Mocha.conf
 
 - name: Copy ssh kitten config file
   ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.config/kitty/ssh.conf"
+    dest: ~/.config/kitty/ssh.conf
     src: ssh.conf
 
 - name: Copy kitty config file
   ansible.builtin.copy:
-    backup: true
-    dest: "{{ user_home }}/.config/kitty/kitty.conf"
+    dest: ~/.config/kitty/kitty.conf
     src: kitty.conf
