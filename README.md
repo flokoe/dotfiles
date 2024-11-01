@@ -8,13 +8,13 @@ just be careful and know what the fuck you do.
 ## Install
 
 ```bash
-curl bootstrap.sh
+curl -sSfL https://raw.githubusercontent.com/flokoe/dotfiles/refs/heads/main/bootstrap.sh | bash -s -- comma,seperated,tags
 ```
 
 ## Usage
 
 ```bash
-just isntall
+just install
 ```
 
 ## Inspiration
