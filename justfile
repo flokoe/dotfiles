@@ -61,3 +61,9 @@ install TAGS="all":
             --vault-id p1@password_files/p1 \
             --vault-id demv1@password_files/demv1 \
             main.yml
+
+# Update the dotfiles repository and install.
+update TAGS="all":
+    @git pull
+    @source venv/bin/activate && pip install --require-virtualenv -r requirements.txt
+    @just install {{TAGS}}
