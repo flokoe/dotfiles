@@ -48,9 +48,10 @@ bootstrap JUST_BIN TAGS="all": ensure_packages
     @python3 -m venv /tmp/dotfiles/venv
     @echo "Install Ansible..."
     @cd /tmp/dotfiles && source venv/bin/activate && pip install --require-virtualenv -r requirements.txt && deactivate
-    @read -rp 'Time to create password files... continue? (y/N): ' confirm && ([[ $confirm == "y" ]] || exit 1)
-    @echo -e "Run Ansible playbook...\n"
-    @{{JUST_BIN}} /tmp/dotfiles/install {{TAGS}}
+    @read -rp 'Time to create password files... continue? (y/N): ' confirm && \
+        [[ $confirm == "y" ]] && \
+        echo -e "Run Ansible playbook...\n" && \
+        {{JUST_BIN}} /tmp/dotfiles/install {{TAGS}}
 
 # Execute `main.yml` Ansible playbook.
 install TAGS="all":
