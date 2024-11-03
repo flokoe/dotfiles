@@ -40,18 +40,23 @@ ensure_packages:
     esac
     echo ""
 
-# Bootstrap my dotfiles.
-bootstrap JUST_BIN TAGS="all": ensure_packages
+[private]
+clone_repo:
     @echo "Cloning repository..."
     @git clone https://github.com/flokoe/dotfiles.git /tmp/dotfiles
+    @echo ""
+
+[private, confirm("Time to create password files... continue? (y/N)")]
+wait_for_passwords:
+
+# Bootstrap my dotfiles.
+bootstrap JUST_BIN TAGS="all": ensure_packages clone_repo wait_for_passwords
     @echo "Create venv..."
     @python3 -m venv /tmp/dotfiles/venv
     @echo "Install Ansible..."
     @cd /tmp/dotfiles && source venv/bin/activate && pip install --require-virtualenv -r requirements.txt && deactivate
-    @read -rp 'Time to create password files... continue? (y/N): ' confirm && \
-        [[ $confirm == "y" ]] && \
-        echo -e "Run Ansible playbook...\n" && \
-        {{JUST_BIN}} /tmp/dotfiles/install {{TAGS}}
+    @echo ""
+    @{{JUST_BIN}} /tmp/dotfiles/install {{TAGS}}
 
 # Execute `main.yml` Ansible playbook.
 install TAGS="all":
