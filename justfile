@@ -22,13 +22,9 @@ ensure_packages:
                 python3 \
                 git
             ;;
-        # centos|fedora|rhel)
-        #     dnf install -y \
-        #         ansible \
-        #         git \
-        #         openssh-clients \
-        #         python3
-        #     ;;
+        bazzite)
+            echo "No need to install packages on Bazzite"
+            ;;
         # debian|ubuntu)
         #     apt-get update
         #     apt-get install -y \
