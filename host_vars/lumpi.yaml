@@ -5,10 +5,10 @@ default_roles:
   - ssh
   - fonts
   - starship
-  - neovim
-  - fish
-  - just
-  - kitty
+  # - neovim
+  # - fish
+  # - just
+  # - kitty
   - flatpak-common
 
 username: florian
