@@ -1,0 +1,14 @@
+---
+
+default_roles:
+  - essentials
+  - ssh
+  - fonts
+  - starship
+  - neovim
+  - fish
+  - just
+  - kitty
+  - flatpak-common
+
+username: florian
