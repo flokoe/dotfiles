@@ -14,4 +14,5 @@ tar --overwrite -C "$dir" -xzf /tmp/just-latest.tar.gz
 
 echo "Executing just bootstrap..."
 echo ""
-curl -sSfL https://raw.githubusercontent.com/flokoe/dotfiles/refs/heads/main/justfile | "${dir}/just" -d ~ -f /dev/stdin bootstrap "${dir}/just" "$tags"
+curl -sSfL https://raw.githubusercontent.com/flokoe/dotfiles/refs/heads/main/justfile -o "${dir}/justfile"
+"${dir}/just" -d ~ -f "${dir}/justfile" bootstrap "${dir}/just" "$tags"
