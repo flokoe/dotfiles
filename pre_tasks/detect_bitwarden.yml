@@ -1,0 +1,18 @@
+---
+
+- name: Detect Bitwarden CLI
+  ansible.builtin.command:
+    cmd: which bw
+  changed_when: false
+  register: bw_installed
+
+- name: Check Bitwarden Session
+  ansible.builtin.shell:
+    cmd: bw status | jq -r .status
+  changed_when: false
+  register: bw_status
+
+- name: Register Bitwarden
+  ansible.builtin.set_fact:
+    bw_ready: true
+  when: bw_installed.rc == 0 and bw_status.stdout == 'unlocked'
