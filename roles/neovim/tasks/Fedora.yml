@@ -15,3 +15,21 @@
   ansible.builtin.copy:
     dest: ~/.var/app/io.neovim.nvim/config/nvim/init.vim
     src: init.vim
+
+- name: Check if fish is installed
+  ansible.builtin.stat:
+    path: ~/.config/fish/config.fish
+  register: fish_installed
+
+- name: Add fish alias for neovim flatpak
+  ansible.builtin.copy:
+    dest: ~/.config/fish/functions/nvim.fish
+    content: |
+      function nvim --wraps='flatpak run io.neovim.nvim' --description 'alias nvim=flatpak run io.neovim.nvim'
+        flatpak run io.neovim.nvim $argv
+      end
+
+      function vim --wraps='flatpak run io.neovim.nvim' --description 'alias nvim=flatpak run io.neovim.nvim'
+        flatpak run io.neovim.nvim $argv
+      end
+  when: fish_installed.stat.exists
