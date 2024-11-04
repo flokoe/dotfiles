@@ -91,6 +91,7 @@ install TAGS="all":
         -i inventory.yml \
         --ask-become-pass \
         --tags {{TAGS}} \
+        --diff \
         main.yml
 
 # Update the dotfiles repository and install.
