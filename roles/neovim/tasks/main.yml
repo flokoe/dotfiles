@@ -9,14 +9,6 @@
   ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   when: distribution_config.stat.exists
 
-- name: "Default: Ensure nvim is installed"
-  ansible.builtin.package:
-    name: neovim
-    state: present
-  when: not distribution_config.stat.exists
-
-- name: Ensure nvim init config exists
-  ansible.builtin.copy:
-    dest: ~/.config/nvim/init.vim
-    src: init.vim
+- name: "Include Tasks: Default"
+  ansible.builtin.include_tasks: "default.yml"
   when: not distribution_config.stat.exists
