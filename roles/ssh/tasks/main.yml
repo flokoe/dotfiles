@@ -24,4 +24,4 @@
 - name: Copy misc ssh config
   ansible.builtin.copy:
     dest: ~/.ssh/conf.d/02-misc.conf
-    content: "{{ lookup('community.general.bitwarden', '3d00d766-89dc-4481-ab71-c6fa1179742a', search='id', field='notes') | first }}"
+    src: 02-misc.conf
