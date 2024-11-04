@@ -13,7 +13,9 @@
     - com.logseq.Logseq
     - com.rustdesk.RustDesk
     - com.spotify.Client
+    - com.usebottles.bottles
     - io.github.nokse22.Exhibit
+    - io.github.prateekmedia.appimagepool
     - io.github.seadve.Kooha
     - io.github.zen_browser.zen
     - org.gnome.Solanum
