@@ -58,6 +58,29 @@ bootstrap JUST_BIN TAGS="all": ensure_packages clone_repo wait_for_passwords
     @echo ""
     @{{JUST_BIN}} /tmp/dotfiles/install {{TAGS}}
 
+# Extract all Ansible Vault identitis.
+ansible_vault_identities:
+    #!/usr/bin/env python3
+    import os, re, yaml, socket
+
+    with open(f"host_vars/{socket.gethostname()}.yaml", 'r') as file:
+        default_roles = yaml.safe_load(file).get('default_roles', [])
+
+    vault_ids = []
+    pattern = re.compile(r'^\$ANSIBLE_VAULT')
+
+    for role in default_roles:
+        for root, _, files in os.walk(f"roles/{role}"):
+            for filename in files:
+                filepath = os.path.join(root, filename)
+
+                with open(filepath, 'r') as file:
+                    for line in file:
+                        if pattern.match(line):
+                            vault_ids.append(line.split(';')[-1].strip() + "@vault-bitwarden-client.sh")
+
+    print(','.join(vault_ids))
+
 # Execute `main.yml` Ansible playbook.
 install TAGS="all":
     @source venv/bin/activate && \
