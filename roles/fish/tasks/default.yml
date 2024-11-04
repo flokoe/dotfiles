@@ -1,0 +1,6 @@
+---
+
+- name: "Default: Ensure fish is installed"
+  ansible.builtin.package:
+    name: fish
+    state: present

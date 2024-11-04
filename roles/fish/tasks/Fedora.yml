@@ -1,0 +1,6 @@
+---
+
+- name: "{{ ansible_distribution }}: Ensure fish is installed"
+  community.general.rpm_ostree_pkg:
+    name: fish
+    state: present
