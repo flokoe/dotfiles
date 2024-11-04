@@ -3,6 +3,7 @@
 - name: Install flatpaks
   community.general.flatpak:
     name: "{{ item }}"
+    method: user
     state: present
   loop:
     - com.bitwarden.desktop
