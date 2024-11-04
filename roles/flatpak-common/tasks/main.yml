@@ -6,7 +6,6 @@
     method: user
     state: present
   loop:
-    - com.bitwarden.desktop
     - com.discordapp.Discord
     - com.github.johnfactotum.Foliate
     - com.github.tchx84.Flatseal

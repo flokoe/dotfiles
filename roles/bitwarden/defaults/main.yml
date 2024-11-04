@@ -1,0 +1,5 @@
+---
+
+# renovate: datasource=github-releases packageName=bitwarden/clients
+bitwarden_version: cli-v2024.10.0
+bitwarden_checksum: sha256:4086e6623227d986446eebf2f937c711c730941c975ddcc7d279c6a2dcf3ec5f

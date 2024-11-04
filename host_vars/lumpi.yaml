@@ -10,5 +10,6 @@ default_roles:
   # - just
   # - kitty
   - flatpak-common
+  - bitwarden
 
 username: florian

@@ -1,0 +1,23 @@
+---
+
+- name: Install Bitwarden Desktop
+  community.general.flatpak:
+    name: com.bitwarden.desktop
+    method: user
+    state: present
+
+- name: Download Bitwarden CLI
+  ansible.builtin.get_url:
+    checksum: "{{ bitwarden_checksum }}"
+    decompress: false
+    dest: /tmp/bitwarden.tar.gz
+    url: "https://github.com/bitwarden/clients/releases/download/{{ bitwarden_version }}/bw-linux-{{ bitwarden_version | regex_replace('^cli-v', '') }}.zip"
+  register: bitwarden_download
+
+- name: Extract Bitwarden CLI
+  ansible.builtin.unarchive:
+    dest: ~/bin
+    include: bw
+    mode: "0755"
+    src: /tmp/bitwarden.tar.gz
+  when: bitwarden_download.changed
