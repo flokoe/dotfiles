@@ -16,12 +16,12 @@
     dest: ~/.var/app/io.neovim.nvim/config/nvim/init.vim
     src: init.vim
 
-- name: Check if fish is installed
+- name: "{{ ansible_distribution }}: Check if fish is installed"
   ansible.builtin.stat:
     path: ~/.config/fish/config.fish
   register: fish_installed
 
-- name: Add fish alias for neovim flatpak
+- name: "{{ ansible_distribution }}: Add fish alias for neovim flatpak"
   ansible.builtin.copy:
     dest: ~/.config/fish/functions/nvim.fish
     content: |
