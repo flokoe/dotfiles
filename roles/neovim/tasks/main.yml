@@ -1,11 +1,22 @@
 ---
 
-- name: Ensure nvim is installed
+- name: "Checking for Distribution Config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
+  register: distribution_config
+
+- name: "Include Tasks: {{ ansible_distribution }}"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+  when: distribution_config.stat.exists
+
+- name: "Default: Ensure nvim is installed"
   ansible.builtin.package:
     name: neovim
     state: present
+  when: not distribution_config.stat.exists
 
 - name: Ensure nvim init config exists
   ansible.builtin.copy:
     dest: ~/.config/nvim/init.vim
     src: init.vim
+  when: not distribution_config.stat.exists

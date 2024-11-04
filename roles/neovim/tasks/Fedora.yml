@@ -1,0 +1,12 @@
+---
+
+- name: "{{ ansible_distribution }}: Ensure nvim is installed"
+  community.general.flatpak:
+    name: io.neovim.nvim
+    method: user
+    state: present
+
+- name: "{{ ansible_distribution }}: Ensure nvim init config exists"
+  ansible.builtin.copy:
+    dest: ~/.var/app/io.neovim.nvim/config/nvim/init.vim
+    src: init.vim
