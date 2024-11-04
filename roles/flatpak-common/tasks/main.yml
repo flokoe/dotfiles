@@ -11,10 +11,8 @@
     - com.github.tchx84.Flatseal
     - com.github.unrud.VideoDownloader
     - com.logseq.Logseq
-    - com.obsproject.Studio
     - com.rustdesk.RustDesk
     - com.spotify.Client
-    - com.valvesoftware.Steam
     - io.github.nokse22.Exhibit
     - io.github.seadve.Kooha
     - io.github.zen_browser.zen
@@ -25,6 +23,8 @@
     - org.pulseaudio.pavucontrol
     - org.remmina.Remmina
     # - com.nextcloud.desktopclient.nextcloud
+    # - com.obsproject.Studio
+    # - com.valvesoftware.Steam
     # - com.visualstudio.code
     # - flathub de.k_bo.Televido
     # - io.gitlab.news_flash.NewsFlash
