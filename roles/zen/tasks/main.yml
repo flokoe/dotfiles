@@ -9,6 +9,7 @@
 - name: Set default Browser to Zen
   ansible.builtin.command:
     cmd: "xdg-mime default io.github.zen_browser.zen.desktop {{ item }}"
+  changed_when: false
   loop:
     - text/html
     - application/xhtml+xml

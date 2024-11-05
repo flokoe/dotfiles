@@ -13,6 +13,7 @@
 - name: Set default application for PDF files
   ansible.builtin.command:
     cmd: xdg-mime default org.gnome.Papers.desktop application/pdf
+  changed_when: false
 
 # - name: Set password for normal user
 #   ansible.builtin.user:
