@@ -1,5 +1,7 @@
 # MANAGED BY ANSIBLE, DO NOT TOUCH
 
+fish_add_path /var/lib/flatpak/exports/bin
+fish_add_path ~/.local/share/flatpak/exports/bin
 fish_add_path ~/bin
 fish_add_path ~/.local/bin
 
