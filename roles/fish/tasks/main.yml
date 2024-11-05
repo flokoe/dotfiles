@@ -5,6 +5,15 @@
     path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
   register: distribution_config
 
+- name: "Checking for Distribution Variables: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/vars/{{ ansible_distribution }}.yml"
+  register: distribution_variables
+
+- name: "Include Variables: {{ ansible_distribution }}"
+  ansible.builtin.include_vars: "{{ ansible_distribution }}.yml"
+  when: distribution_variables.stat.exists
+
 - name: "Include Tasks: {{ ansible_distribution }}"
   ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   when: distribution_config.stat.exists
@@ -38,9 +47,9 @@
   when: copy_fish_plugins.changed and not fisher_init.changed
 
 - name: Copy fish config file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     dest: ~/.config/fish/config.fish
-    src: config.fish
+    src: config.fish.j2
 
 - name: Copy all autoload functions
   ansible.builtin.copy:

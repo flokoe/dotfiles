@@ -11,7 +11,7 @@ if status is-interactive
     set -U fish_greeting
 
     # Set important variables
-    set -gx EDITOR nvim
+    set -gx EDITOR {{ editor_bin }}
 
     # Enable colors for ls in kitty
     dircolors -c | source
