@@ -11,5 +11,6 @@ default_roles:
   # - kitty
   - flatpak-common
   - bitwarden
+  - zen
 
 username: florian

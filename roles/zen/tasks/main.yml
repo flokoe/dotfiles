@@ -1,0 +1,16 @@
+---
+
+- name: Install Zen browser
+  community.general.flatpak:
+    name: io.github.zen_browser.zen
+    method: user
+    state: present
+
+- name: Set default Browser to Zen
+  ansible.builtin.command:
+    cmd: "xdg-mime default io.github.zen_browser.zen.desktop {{ item }}"
+  loop:
+    - text/html
+    - application/xhtml+xml
+    - x-scheme-handler/http
+    - x-scheme-handler/https
