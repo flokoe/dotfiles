@@ -15,6 +15,12 @@
     cmd: xdg-mime default org.gnome.Papers.desktop application/pdf
   changed_when: false
 
+- name: Set Volume Step to 2
+  community.general.dconf:
+    key: /org/gnome/settings-daemon/plugins/media-keys/volume-step
+    value: 2
+    state: present
+
 # - name: Set password for normal user
 #   ansible.builtin.user:
 #     state: present
