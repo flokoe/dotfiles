@@ -10,6 +10,10 @@
     path: ~/.local/bin
     state: directory
 
+- name: Set default application for PDF files
+  ansible.builtin.command:
+    cmd: xdg-mime default org.gnome.Papers.desktop application/pdf
+
 # - name: Set password for normal user
 #   ansible.builtin.user:
 #     state: present
