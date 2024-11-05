@@ -6,6 +6,11 @@
     method: user
     state: present
 
+- name: Copy desktop file
+  ansible.builtin.copy:
+    dest: ~/.local/share/applications/com.bitwarden.desktop.desktop
+    src: com.bitwarden.desktop.desktop
+
 - name: Download Bitwarden CLI
   ansible.builtin.get_url:
     checksum: "{{ bitwarden_checksum }}"
