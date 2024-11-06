@@ -25,6 +25,7 @@
     - org.nickvision.tubeconverter
     - org.pulseaudio.pavucontrol
     - org.remmina.Remmina
+    - com.visualstudio.code
     # - com.nextcloud.desktopclient.nextcloud
     # - com.obsproject.Studio
     # - com.valvesoftware.Steam
