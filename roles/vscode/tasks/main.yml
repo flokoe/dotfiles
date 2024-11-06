@@ -1,0 +1,21 @@
+---
+
+- name: Install VS Code
+  community.general.flatpak:
+    name: com.visualstudio.code
+    method: user
+    state: present
+
+- name: "Check if fish is installed"
+  ansible.builtin.stat:
+    path: ~/.config/fish/config.fish
+  register: fish_installed
+
+- name: Add fish alias
+  ansible.builtin.copy:
+    dest: ~/.config/fish/functions/code.fish
+    content: |
+      function code --wraps=com.visualstudio.code --description 'alias code=com.visualstudio.code'
+        com.visualstudio.code $argv
+      end
+  when: fish_installed.stat.exists

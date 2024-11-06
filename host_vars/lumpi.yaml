@@ -12,5 +12,6 @@ default_roles:
   - flatpak-common
   - bitwarden
   - zen
+  - vscode
 
 username: florian
