@@ -11,6 +11,7 @@
     - com.github.tchx84.Flatseal
     - com.github.unrud.VideoDownloader
     - com.logseq.Logseq
+    - com.nextcloud.desktopclient.nextcloud
     - com.rustdesk.RustDesk
     - com.spotify.Client
     - com.usebottles.bottles

@@ -13,5 +13,6 @@ default_roles:
   - bitwarden
   - zen
   - vscode
+  - vaultwarden-backup
 
 username: florian

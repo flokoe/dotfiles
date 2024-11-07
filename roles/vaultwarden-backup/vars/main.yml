@@ -1,0 +1,5 @@
+---
+
+vaultwarden_backup_host: "{{ lookup('community.general.bitwarden', '3f113ea6-431c-4c57-ae71-320203c5f9d0', search='id') | first | community.general.json_query('fields[?name==`Host`].value | [0]') }}"
+vaultwarden_backup_username: "{{ lookup('community.general.bitwarden', '3f113ea6-431c-4c57-ae71-320203c5f9d0', search='id', field='username') | first }}"
+vaultwarden_backup_password: "{{ lookup('community.general.bitwarden', '3f113ea6-431c-4c57-ae71-320203c5f9d0', search='id', field='password') | first }}"
