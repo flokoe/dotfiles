@@ -99,3 +99,13 @@ update TAGS="all":
     @git pull
     @source venv/bin/activate && pip install --require-virtualenv -r requirements.txt
     @just install {{TAGS}}
+
+# Print all Ansible roles. Mostly used for autocomplection of `dotfiles`.
+ansible_roles:
+    #!/usr/bin/env python3
+    import yaml, socket
+
+    with open(f"host_vars/{socket.gethostname()}.yaml", 'r') as file:
+        default_roles = yaml.safe_load(file).get('default_roles', [])
+
+    print('\n'.join(default_roles))
