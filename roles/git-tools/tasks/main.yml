@@ -1,0 +1,12 @@
+---
+
+- name: Clone git-tools repo
+  ansible.builtin.git:
+    dest: ~/Projects/git-tools
+    repo: git@github.com:dotdash/git-tools.git
+
+- name: Link git-tools
+  ansible.builtin.file:
+    src: ~/Projects/git-tools/git-breakout
+    dest: ~/bin/git-breakout
+    state: link
