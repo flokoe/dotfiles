@@ -1,0 +1,32 @@
+---
+
+- name: Ensure systemd user directory exists
+  ansible.builtin.file:
+    path: ~/.config/systemd/user
+    state: directory
+
+- name: Ensure vaultwarden-backup directory exists
+  ansible.builtin.file:
+    path: ~/Documents/vaultwarden-backup
+    state: directory
+
+- name: Create Systemd Vaultwarden Service
+  ansible.builtin.copy:
+    dest: ~/.config/systemd/user/vaultwarden-backup.service
+    content: |
+      [Unit]
+      Description=Vaultwarden Backup
+      After=network.target
+
+      [Service]
+      Type=oneshot
+      WorkingDirectory=%h/Documents/vaultwarden-backup
+      LoadCredentialEncrypted=password:%h/Documents/systemd-creds/vaultwarden-backup.cred
+      ExecStart=systemd-creds cat password
+      # ExecStart=sshpass -p "systemd-creds cat password" sftp \
+      #   -o PubkeyAuthentication=no -o PreferredAuthentications=password -r \
+      #   'p23603@truthful-skunk.pikapod.net:data/*' .
+      # ExecStart=sqlite3 -readonly db.sqlite3 ".backup db.sqlite3.bak"
+
+      [Install]
+      WantedBy=default.target
