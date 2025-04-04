@@ -84,9 +84,22 @@ ansible_vault_identities:
 
     print(','.join(vault_ids))
 
+# Execute ansible commands.
+[private]
+uvxa +CMD:
+    @uvx --from ansible-core --with ansible {{ CMD }}
+
+# Run ansible-galaxy.
+ag *OPTS:
+    @just uvxa ansible-galaxy {{ OPTS }}
+
+# Run ansible-playbook.
+ap *OPTS:
+    @just uvxa ansible-playbook {{ OPTS }}
+
 # Execute `main.yml` Ansible playbook.
 install TAGS="all" $ANSIBLE_PYTHON_INTERPRETER="auto_silent" $ANSIBLE_VAULT_IDENTITY_LIST=`just ansible_vault_identities`:
-    @uvx --from ansible-core --with ansible ansible-playbook \
+    @just ap \
         -i {{ host }}, \
         --ask-become-pass \
         --tags {{TAGS}} \
