@@ -3,8 +3,15 @@
 - name: Dotfiles
   hosts: all
   connection: local
+  gather_facts: false
 
   pre_tasks:
+    - name: Gatther fact subset
+      ansible.builtin.setup:
+        gather_subset:
+          - "!all"
+          - system
+
     - name: Detect Bitwarden
       ansible.builtin.import_tasks: pre_tasks/detect_bitwarden.yml
       tags:
