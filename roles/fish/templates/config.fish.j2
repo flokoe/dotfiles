@@ -5,10 +5,13 @@ fish_add_path ~/.local/share/flatpak/exports/bin
 fish_add_path ~/bin
 fish_add_path ~/.local/bin
 
+
 # Commands to run in interactive sessions can go here
 if status is-interactive
     # Disable greeting on startup
     set -U fish_greeting
+
+    devbox global shellenv --init-hook | source
 
     # Set important variables
     set -gx EDITOR {{ editor_bin }}
@@ -19,6 +22,10 @@ if status is-interactive
     starship init fish | source
 
     direnv hook fish | source
+
+    fzf --fish | source
+
+    zoxide init fish | source
 
     abbr -a -- gcop 'gco production'
     abbr -a -- gcom 'gco main'
