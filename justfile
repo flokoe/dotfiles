@@ -85,7 +85,7 @@ ansible_vault_identities:
     print(','.join(vault_ids))
 
 # Execute `main.yml` Ansible playbook.
-install TAGS="all" $ANSIBLE_VAULT_IDENTITY_LIST=`just ansible_vault_identities`:
+install TAGS="all" $ANSIBLE_PYTHON_INTERPRETER="auto_silent" $ANSIBLE_VAULT_IDENTITY_LIST=`just ansible_vault_identities`:
     @uvx --from ansible-core --with ansible ansible-playbook \
         -i {{ host }}, \
         --ask-become-pass \
