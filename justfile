@@ -50,17 +50,18 @@ clone_repo:
 wait_for_passwords:
 
 # Bootstrap my dotfiles.
-bootstrap JUST_BIN TAGS="all": ensure_packages clone_repo wait_for_passwords
-    @echo "Create venv..."
-    @python3 -m venv /tmp/dotfiles/venv
-    @echo "Install Ansible..."
-    @cd /tmp/dotfiles && source venv/bin/activate && pip install --require-virtualenv -r requirements.txt && deactivate
-    @echo ""
-    @{{JUST_BIN}} /tmp/dotfiles/install {{TAGS}}
+bootstrap TAGS="all": ensure_packages clone_repo wait_for_passwords
+    @just /tmp/dotfiles/install {{TAGS}}
 
 # Extract all Ansible Vault identitis.
 ansible_vault_identities:
-    #!/usr/bin/env python3
+    #!/usr/bin/env -S uv run --quiet --script
+
+    # /// script
+    # requires-python = ">=3.12"
+    # dependencies = ["pyyaml"]
+    # ///
+
     import os, re, yaml, socket
 
     with open(f"host_vars/{socket.gethostname()}.yaml", 'r') as file:
@@ -82,12 +83,8 @@ ansible_vault_identities:
     print(','.join(vault_ids))
 
 # Execute `main.yml` Ansible playbook.
-install TAGS="all":
-    #!/usr/bin/env bash
-    set -Eeuo pipefail
-    export ANSIBLE_VAULT_IDENTITY_LIST="$(just ansible_vault_identities)"
-    source venv/bin/activate
-    ansible-playbook \
+install TAGS="all" $ANSIBLE_VAULT_IDENTITY_LIST=`just ansible_vault_identities`:
+    uvx --from ansible-core ansible-playbook \
         -i inventory.yml \
         --ask-become-pass \
         --tags {{TAGS}} \
@@ -97,12 +94,17 @@ install TAGS="all":
 # Update the dotfiles repository and install.
 update TAGS="all":
     @git pull
-    @source venv/bin/activate && pip install --require-virtualenv -r requirements.txt
     @just install {{TAGS}}
 
 # Print all Ansible roles. Mostly used for autocomplection of `dotfiles`.
 ansible_roles:
-    #!/usr/bin/env python3
+    #!/usr/bin/env -S uv run --quiet --script
+
+    # /// script
+    # requires-python = ">=3.12"
+    # dependencies = ["pyyaml"]
+    # ///
+
     import yaml, socket
 
     with open(f"host_vars/{socket.gethostname()}.yaml", 'r') as file:
