@@ -9,3 +9,8 @@
   community.general.flatpak:
     name: com.slack.Slack
     state: present
+
+- name: Copy demv git config
+  ansible.builtin.copy:
+    dest: ~/Projects/demv/.gitconfig
+    src: gitconfig
