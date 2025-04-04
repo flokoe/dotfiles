@@ -5,10 +5,10 @@ default_roles:
   - ssh
   - fonts
   - starship
-  - neovim
+  # - neovim
   - fish
   - just
-  - kitty
+  # - kitty
   - flatpak-common
   - git-tools
   - demv
