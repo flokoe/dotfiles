@@ -1,3 +1,5 @@
+host := shell("hostnamectl hostname")
+
 # List all available recipes.
 [private]
 default:
@@ -84,8 +86,8 @@ ansible_vault_identities:
 
 # Execute `main.yml` Ansible playbook.
 install TAGS="all" $ANSIBLE_VAULT_IDENTITY_LIST=`just ansible_vault_identities`:
-    uvx --from ansible-core ansible-playbook \
-        -i inventory.yml \
+    @uvx --from ansible-core --with ansible ansible-playbook \
+        -i {{ host }}, \
         --ask-become-pass \
         --tags {{TAGS}} \
         --diff \

@@ -2,6 +2,7 @@
 
 - name: Dotfiles
   hosts: all
+  connection: local
 
   pre_tasks:
     - name: Detect Bitwarden

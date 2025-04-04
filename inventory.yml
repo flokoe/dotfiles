@@ -1,4 +1,0 @@
-all:
-  hosts:
-    DEMV000616:
-      ansible_connection: local
