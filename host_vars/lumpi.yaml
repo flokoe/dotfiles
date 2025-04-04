@@ -12,7 +12,6 @@ default_roles:
   - flatpak-common
   - bitwarden
   - zen
-  - vscode
   - vaultwarden-backup
 
 username: florian
