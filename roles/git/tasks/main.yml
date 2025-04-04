@@ -1,0 +1,6 @@
+---
+
+- name: Copy git config
+  ansible.builtin.copy:
+    dest: ~/.gitconfig
+    src: gitconfig

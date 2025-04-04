@@ -1,0 +1,68 @@
+[user]
+	name = Florian Köhler
+	email = git@flokoe.de
+	signingkey = ~/.ssh/id_ed25519
+[commit]
+	gpgsign = true
+	verbose = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[init]
+	defaultBranch = main
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = zebra-dark
+	navigate = true    # use n and N to move between diff sections
+	hyperlinks = true
+	zebra-dark = true
+	#hunk-header-style = omit
+	#syntax-theme = none
+[delta "zebra-dark"]
+	minus-style = syntax "#330f0f"
+	minus-emph-style = syntax "#4f1917"
+	plus-style = syntax "#0e2f19"
+	plus-emph-style = syntax "#174525"
+	map-styles = \
+		bold purple => syntax "#330f29", \
+		bold blue => syntax "#271344", \
+		bold cyan => syntax "#0d3531", \
+		bold yellow => syntax "#222f14"
+	zero-style = syntax
+	whitespace-error-style = "#aaaaaa"
+[merge]
+	conflictstyle = zdiff3
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	#colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	updateRefs = true
+	autoSquash = true
+	autoStash = true
+[pull]
+	rebase = true
+[alias]
+	fpush = push --force-with-lease
+[includeIf "gitdir:~/Projects/demv/"]
+	path = ~/Projects/demv/.gitconfig
