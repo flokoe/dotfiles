@@ -5,3 +5,7 @@ env
 venv
 vault_password_file
 password_files
+dnfroot
+wazuh-agent
+image
+passwords
