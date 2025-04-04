@@ -80,7 +80,12 @@ ansible_vault_identities:
                 with open(filepath, 'r') as file:
                     for line in file:
                         if pattern.match(line):
-                            vault_ids.append(line.split(';')[-1].strip() + "@vault-bitwarden-client.sh")
+                            id = line.split(';')[-1].strip()
+
+                            if id.startswith('demv'):
+                                vault_ids.append(id + "@passwords")
+                            else:
+                                vault_ids.append(id + "@vault-bitwarden-client.sh")
 
     print(','.join(vault_ids))
 
