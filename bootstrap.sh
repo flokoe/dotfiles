@@ -4,15 +4,49 @@ set -Eeuo pipefail
 
 tags="${1:-all}"
 
-echo "Downloading just..."
-latest_release_url="$(curl -sSfL https://api.github.com/repos/casey/just/releases/latest | grep browser_download_url |grep 'x86_64-unknown-linux-musl.tar.gz"' | cut -d'"' -f 4)"
-curl -sSfL "$latest_release_url" -o /tmp/just-latest.tar.gz
+# Install Nix via Determinate Nix Installer if not already installed.
+if ! command -v nix &> /dev/null; then
+  echo foo
+  # curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate
+else
+  echo "Nix is already installed."
+fi
 
-echo "Extracting just to /tmp..."
-dir="$(mktemp -d)"
-tar --overwrite -C "$dir" -xzf /tmp/just-latest.tar.gz
+# Install devbox if not already installed.
+if ! command -v devbox &> /dev/null; then
+  curl -fsSL https://get.jetify.com/devbox | bash
+else
+  echo "Devbox is already installed."
+fi
+
+# Install git if not already installed.
+if ! command -v git &> /dev/null; then
+  # shellcheck source=/dev/null
+  source /etc/os-release
+  id="${ID_LIKE:-$ID}"
+
+  case $id in
+    fedora)
+      dnf install -y git
+      ;;
+    debian|ubuntu)
+      apt install -y git
+      ;;
+    arch)
+      pacman -S --noconfirm git
+      ;;
+    *)
+      echo "Unsupported OS: $id"
+      exit 1
+      ;;
+  esac
+else
+  echo "Git is already installed."
+fi
+
+# Install my global devbox config.
+devbox global pull https://github.com/flokoe/devbox.git
+eval "$(devbox global shellenv --preserve-path-stack -r)" && hash -r
 
 echo "Executing just bootstrap..."
-echo ""
-curl -sSfL https://raw.githubusercontent.com/flokoe/dotfiles/refs/heads/main/justfile -o "${dir}/justfile"
-"${dir}/just" -d ~ -f "${dir}/justfile" bootstrap "${dir}/just" "$tags"
+curl -sSfL https://raw.githubusercontent.com/flokoe/dotfiles/refs/heads/main/justfile | just -d ~ -f /dev/stdin bootstrap "$tags"
