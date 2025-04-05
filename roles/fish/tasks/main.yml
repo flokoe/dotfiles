@@ -56,6 +56,11 @@
     dest: ~/.config/fish/functions/
     src: functions/
 
+- name: Copy all completions
+  ansible.builtin.copy:
+    dest: ~/.config/fish/completions/
+    src: completions/
+
 - name: Check if theme exists
   ansible.builtin.lineinfile:
     line: SETUVAR fish_color_normal:cdd6f4
