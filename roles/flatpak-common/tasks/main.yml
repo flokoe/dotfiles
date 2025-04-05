@@ -6,30 +6,45 @@
     method: user
     state: present
   loop:
+    - com.belmoussaoui.Authenticator
+    - com.bitwig.BitwigStudio
     - com.discordapp.Discord
     - com.github.johnfactotum.Foliate
     - com.github.tchx84.Flatseal
     - com.github.unrud.VideoDownloader
+    - com.jeffser.Alpaca
     - com.logseq.Logseq
-    - com.nextcloud.desktopclient.nextcloud
+    - com.obsproject.Studio
     - com.rustdesk.RustDesk
     - com.spotify.Client
     - com.usebottles.bottles
+    - de.leopoldluley.Clapgrep
     - io.github.flattool.Warehouse
     - io.github.nokse22.Exhibit
     - io.github.prateekmedia.appimagepool
     - io.github.seadve.Kooha
+    - io.otsaloma.gaupol
+    - it.mijorus.gearlever
+    - org.avidemux.Avidemux
+    - org.chromium.Chromium
+    - org.gimp.GIMP
+    - org.gnome.design.IconLibrary
+    - org.gnome.gitlab.YaLTeR.Identity
     - org.gnome.seahorse.Application
     - org.gnome.Solanum
+    - org.gnome.SoundRecorder
     - org.gnome.World.PikaBackup
+    - org.inkscape.Inkscape
+    - org.kde.kdenlive
+    - org.keepassxc.KeePassXC
     - org.localsend.localsend_app
     - org.nickvision.tubeconverter
     - org.pulseaudio.pavucontrol
     - org.remmina.Remmina
-    # - com.nextcloud.desktopclient.nextcloud
-    # - com.obsproject.Studio
-    # - com.valvesoftware.Steam
-    # - com.visualstudio.code
+    - org.sqlitebrowser.sqlitebrowser
+    - org.videolan.VLC
+    - re.sonny.Workbench
+    - studio.kx.carla
     # - flathub de.k_bo.Televido
     # - io.gitlab.news_flash.NewsFlash
     # - org.flameshot.Flameshot
