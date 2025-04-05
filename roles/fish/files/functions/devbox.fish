@@ -3,6 +3,17 @@ function dbox-add --wraps='devbox global add' --description 'alias dbox-add=devb
 end
 
 function dbox-publish --description 'Add package and publish to GitHub'
+  if not delta -s (devbox global list | cut -d" " -f2 | sort | psub -s "-local") (curl -sSfL https://raw.githubusercontent.com/flokoe/devbox/refs/heads/main/devbox.json | jq -r .packages[] | sort | psub -s "-remote")
+    echo -e "\nRemote and local devbox are not in sync."
+    read -P "Pull before pushing new config? (yN): " pull
+
+    if string match -q "y" $pull
+      echo ""
+      dbox-pull
+      echo ""
+    end
+  end
+
   dbox-add $argv && devbox global push git@github.com:flokoe/devbox.git
 end
 
