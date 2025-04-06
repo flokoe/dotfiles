@@ -7,8 +7,6 @@ default_roles:
   - starship
   - neovim
   - fish
-  # - just
-  # - kitty
   - flatpak-common
   - git
   - bitwarden
