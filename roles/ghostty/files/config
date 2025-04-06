@@ -1,0 +1,30 @@
+# clipboard-paste-protection = true
+adw-toolbar-style = raised
+auto-update = off
+bold-is-bright = true
+clipboard-trim-trailing-spaces = true
+cursor-style = block
+font-family = Hack # Hack nerd font mono?
+font-size = 16
+gtk-adwaita = true
+scrollback-limit = 2097152
+shell-integration = fish
+shell-integration-features = no-cursor
+theme = catppuccin-mocha
+window-height = 40
+window-padding-balance = true
+window-padding-x = 3
+window-padding-y = 3
+window-theme = ghostty
+window-width = 130
+
+# Copy to clipboard of text is selected
+keybind = performable:ctrl+c=copy_to_clipboard
+
+# Make reload config work. There is some weird issue with non US layouts:
+# https://github.com/ghostty-org/ghostty/discussions/4427
+keybind = ctrl+shift+physical:comma=reload_config
+
+# New tab, close tab
+keybind = ctrl+t=new_tab
+keybind = ctrl+w=close_tab
