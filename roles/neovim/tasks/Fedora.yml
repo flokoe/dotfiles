@@ -4,32 +4,4 @@
   community.general.flatpak:
     name: io.neovim.nvim
     method: user
-    state: present
-
-- name: "{{ ansible_distribution }}: Ensure nvim config directory exists"
-  ansible.builtin.file:
-    path: ~/.var/app/io.neovim.nvim/config/nvim
-    state: directory
-
-- name: "{{ ansible_distribution }}: Ensure nvim init config exists"
-  ansible.builtin.copy:
-    dest: ~/.var/app/io.neovim.nvim/config/nvim/init.vim
-    src: init.vim
-
-- name: "{{ ansible_distribution }}: Check if fish is installed"
-  ansible.builtin.stat:
-    path: ~/.config/fish/config.fish
-  register: fish_installed
-
-- name: "{{ ansible_distribution }}: Add fish alias for neovim flatpak"
-  ansible.builtin.copy:
-    dest: ~/.config/fish/functions/nvim.fish
-    content: |
-      function nvim --wraps=io.neovim.nvim --description 'alias nvim=io.neovim.nvim'
-        io.neovim.nvim $argv
-      end
-
-      function vim --wraps=io.neovim.nvim --description 'alias vim=io.neovim.nvim'
-        io.neovim.nvim $argv
-      end
-  when: fish_installed.stat.exists
+    state: absent
