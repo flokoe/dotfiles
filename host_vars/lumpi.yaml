@@ -12,5 +12,6 @@ default_roles:
   - bitwarden
   - zen
   - vaultwarden-backup
+  - ghostty
 
 username: florian
