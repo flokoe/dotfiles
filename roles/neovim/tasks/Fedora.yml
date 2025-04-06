@@ -1,7 +1,0 @@
----
-
-- name: "{{ ansible_distribution }}: Ensure nvim is installed"
-  community.general.flatpak:
-    name: io.neovim.nvim
-    method: user
-    state: absent
