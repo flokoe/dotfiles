@@ -1,4 +1,5 @@
 # clipboard-paste-protection = true
+adjust-cursor-height = -2
 adw-toolbar-style = raised
 auto-update = off
 bold-is-bright = true
