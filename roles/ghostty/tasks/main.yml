@@ -9,6 +9,11 @@
   ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   when: distribution_config.stat.exists
 
+- name: Ensure ghostty config directory exists
+  ansible.builtin.file:
+    path: ~/.config/ghostty
+    state: directory
+
 - name: Copy ghostty config
   ansible.builtin.copy:
     dest: ~/.config/ghostty/config
