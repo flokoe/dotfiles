@@ -17,6 +17,7 @@ window-padding-balance = true
 window-padding-x = 3
 window-padding-y = 3
 window-theme = ghostty
+window-titlebar-background = 23233c
 window-width = 130
 
 # Copy to clipboard of text is selected
