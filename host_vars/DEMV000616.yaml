@@ -5,13 +5,13 @@ default_roles:
   - ssh
   - fonts
   - starship
-  # - neovim
+  - neovim
   - fish
-  # - just
-  # - kitty
   - flatpak-common
   - git
   - git-tools
+  - zen
+  - ghostty
   - demv
 
 username: fkoehler
