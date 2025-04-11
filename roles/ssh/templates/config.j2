@@ -11,6 +11,7 @@ Host *
   ServerAliveInterval 120
   PreferredAuthentications publickey
   ForwardAgent no
+  SetEnv TERM=xterm-256color
 
   ControlMaster auto
   ControlPath ~/.ssh/control/%r.%h.%p.sock
