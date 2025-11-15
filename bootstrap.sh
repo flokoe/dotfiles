@@ -45,7 +45,7 @@ else
 fi
 
 # Install my global devbox config.
-devbox global pull https://github.com/flokoe/devbox.git
+devbox global pull --force https://github.com/flokoe/devbox.git
 eval "$(devbox global shellenv --preserve-path-stack -r)" && hash -r
 
 echo "Executing just bootstrap..."
