@@ -24,7 +24,7 @@ ensure_packages:
                 python3 \
                 git
             ;;
-        bazzite)
+        bazzite|bluefin)
             echo "No need to install packages on Bazzite"
             ;;
         # debian|ubuntu)
